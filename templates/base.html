@@ -35,6 +35,7 @@
     <title>Picture Palace {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
+
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -56,6 +57,24 @@
                     </div>
                 </form>
             </div>
+             <!--NAVBAR and LOGO, Navbar toggles in mobile view for ease of navigation on smaller screen size-->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+                <h2 class="logo-font text-black my-0"><strong>Picture</strong> Palace</h2>
+                </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon">
+            </span>
+            </button>
+        <div class="collapse navbar-collapse" id="collapse_target">
+            <ul class="navbar-nav ml-auto menu">
+                <li class="menu"><a href="index.html" class="nav-item nav-link active navlinkcolor">Home</a></li>
+                <li class="menu"><a href="aboutme.html" class="nav-item nav-link active navlinkcolor">About Me</a></li>
+                <li class="menu"><a href="portfolio.html" class="nav-item nav-link active navlinkcolor">Portfolio</a></li>
+                <li class="menu"><a href="contact.html" class="nav-item nav-link active navlinkcolor">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">

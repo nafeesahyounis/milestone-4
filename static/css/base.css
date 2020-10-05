@@ -8,12 +8,19 @@ body {
     color: #555;
     font-family: 'Lato';
   
-background: linear-gradient(to right, #002A32 0%, #002A32 50%,#000000 50%,#BFACB5 50%,#BFACB5 100%); /* W3C */
+}
+
+.navbar-dark{
+    background-color:#753065;
+
+
 }
 
 .first {
-    background-color:#A3C9D3;
+    background-color:#753065;
 }
+
+/*#A3C9D3 */
 
 /* from Bulma */
 .icon {
