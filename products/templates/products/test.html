@@ -7,19 +7,19 @@
         <div class="col-12 my-auto">
 
 <p> Categories </p>
-  <form method="POST">
+  <form method="POST" action="{% url 'test' %}" >
   {% csrf_token %}
 
 
 
     <label for="cars">Choose a category:</label>
   <select>
-    <option value="stylists" name="stylists">Stylists</option>
-    <option value="interior designers" name="interior designers">Interior Designers</option>
-    <option value="personal trainers" name="personal trainers">Personal Trainers</option>
-    <option value="professional photos" name="professional photos">Professional Photos</option>
-     <option value="life coaches" name="life coaches">Life coaches</option>
-    <option value="other" name="other">Other</option>
+    <option value="1" name="1">Stylists</option>
+    <option value="2" name="2">Interior Designers</option>
+    <option value="3" name="3">Personal Trainers</option>
+    <option value="4" name="4">Professional Photos</option>
+     <option value="5" name="5">Life coaches</option>
+    <option value="6" name="6">Other</option>
 
 
   </select>
@@ -39,6 +39,8 @@
     working?
         {% for product in products %}
         <p>{{ product.name }}</p>
+        <p>{{ product.category }}</p>
+
         <p>{{ product.description }}</p>
         <p>{{ product.sku }}</p>
         <p>{{ product.price }}</p>

@@ -6,12 +6,16 @@ from .models import Product, Category
 def test(request):
 
     if request.method == "POST":
-        filter = (request.POST)
-        products = Category.objects.filter(name__exact=filter)
 
-        context= {
+        # filter = (request.POST)
+        query = request.POST
+        print(query)
+        products = Product.objects.filter(category='1')
+
+        context = {
             'products': products,
         }
+        return render(request, 'products/test.html', context)
 
     else:
         """A view to return the test page"""
