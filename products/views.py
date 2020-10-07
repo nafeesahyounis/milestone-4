@@ -21,5 +21,6 @@ def test(request):
         }
     return render(request, 'products/test.html', context)
 
+
 #post name of category
 #
