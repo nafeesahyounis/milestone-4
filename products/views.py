@@ -11,7 +11,7 @@ def test(request):
     if request.method == "POST":
 
         # filter = (request.POST)
-        query = request.POST
+        query = request.POST['category']
         print('this is being printed', query)
         products = Product.objects.filter(category=query)
         print(products)
