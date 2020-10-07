@@ -8,12 +8,11 @@
 
 <p> Categories </p>
   <form method="POST" action="{% url 'test' %}" >
-  {% csrf_token %}
 
 
 
-    <label for="cars">Choose a category:</label>
-  <select>
+    <label for="category">Choose a category:</label>
+  <select name="category" id="category">
     <option value="1" name="1">Stylists</option>
     <option value="2" name="2">Interior Designers</option>
     <option value="3" name="3">Personal Trainers</option>
@@ -23,7 +22,9 @@
 
 
   </select>
-  <input type="submit">
+  <button type="submit">Submit</button>
+    {% csrf_token %}
+
   </form>
 
 

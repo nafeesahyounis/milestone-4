@@ -5,12 +5,16 @@ from .models import Product, Category
 
 def test(request):
 
+    categories = Category.objects.all()
+    print(categories)
+
     if request.method == "POST":
 
         # filter = (request.POST)
         query = request.POST
-        print(query)
-        products = Product.objects.filter(category='1')
+        print('this is being printed', query)
+        products = Product.objects.filter(category=query)
+        print(products)
 
         context = {
             'products': products,
@@ -22,6 +26,7 @@ def test(request):
         products = Product.objects.all()
         context = {
         'products': products,
+        'categories': categories
         }
     return render(request, 'products/test.html', context)
 
