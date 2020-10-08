@@ -19,14 +19,23 @@ def test(request):
         query = request.POST['sort']
         print('this is being printed', query)
         products = Product.objects.all()
+        context = {
+                'products':products,
+            }
         if query == 1:
             result = products.order_by('price')
+            context = {
+                'products':result,
+            }
+            return render(request,'products/test.html', context)
         if query == 2:
             result = products.order_by('price').reverse()
-        context = {
-            'products': products,
+            print('result descending',result)
+            context = {
+                'products': result,
             }
-    return render(request, 'products/test.html', context)
+            return render(request,'products/test.html', context)
+        
 
 
     else:
