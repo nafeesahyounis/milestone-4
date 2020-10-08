@@ -22,7 +22,7 @@
 
 
 
-  <form method="POST" action="{% url 'test' %}" >
+ <!-- <form method="POST" action="{% url 'test' %}" >
 
 
 
@@ -40,7 +40,7 @@
   <button type="submit">Submit</button>
     {% csrf_token %}
 
-  </form>
+  </form> -->
 
 
 
@@ -50,13 +50,16 @@
   
 <p> Sort by </p>
 <form method="POST" action="{% url 'test' %}">
-  <select name="sorthightolow" id="sorthightolow">
-    <option value="1" name="1">Price high to low</option>
-  </select>
-  <select name="lowtohigh" id="lowtohigh">
-    <option value="2" name="2">Price low to high</option>
+    {% csrf_token %}
+
+  <select name="sort" id="sort">
+    <option value="1" name="lowtohigh">Price low to high</option>
+    <option value="2" name="hightolow">Price high to low</option>
+
 
   </select>
+      <button type="submit">Sort</button>
+
 
 
 </form>

@@ -12,15 +12,22 @@ def test(request):
 
         # filter = (request.POST)
         #if request.POST['sort']
-        query = request.POST['category']
+        #query = request.POST['category']
+        #print('this is being printed', query)
+        #products = Product.objects.filter(category=query)
+        #print(products)
+        query = request.POST['sort']
         print('this is being printed', query)
-        products = Product.objects.filter(category=query)
-        print(products)
-
+        products = Product.objects.all()
+        if query == 1:
+            result = products.order_by('price')
+        if query == 2:
+            result = products.order_by('price').reverse()
         context = {
             'products': products,
-        }
-        return render(request, 'products/test.html', context)
+            }
+    return render(request, 'products/test.html', context)
+
 
     else:
         """A view to return the test page"""
@@ -50,10 +57,11 @@ def interiordesigners(request):
 def personaltrainers(request):
     
     products = Product.objects.filter(category='5')
+    category = personaltrainers
     context = {
             'products': products,
         }
-    return render(request, 'products/test.html', context)
+    return render(request, 'products/test.html', context, category)
 
 def professionalphotos(request):
     
