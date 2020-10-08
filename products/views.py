@@ -47,6 +47,38 @@ def interiordesigners(request):
         }
     return render(request, 'products/test.html', context)
 
+def personaltrainers(request):
+    
+    products = Product.objects.filter(category='5')
+    context = {
+            'products': products,
+        }
+    return render(request, 'products/test.html', context)
+
+def professionalphotos(request):
+    
+    products = Product.objects.filter(category='4')
+    context = {
+            'products': products,
+        }
+    return render(request, 'products/test.html', context)
+
+def lifecoaches(request):
+    
+    products = Product.objects.filter(category='3')
+    context = {
+            'products': products,
+        }
+    return render(request, 'products/test.html', context)
+
+def other(request):
+    
+    products = Product.objects.filter(category='6')
+    context = {
+            'products': products,
+        }
+    return render(request, 'products/test.html', context)
+
 
 
 #post name of category

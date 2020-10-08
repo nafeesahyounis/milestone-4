@@ -22,9 +22,11 @@ urlpatterns = [
     path('test', views.test, name='test'),
     path('test/stylists', views.stylists, name='stylists'),
     path('test/interiordesigners', views.interiordesigners, name='interiordesigners'),
-    path('test/lifecoaches', views.interiordesigners, name='lifecoaches'),
-    path('test/professionalphotos', views.interiordesigners, name='professionalphotos'),
-    path('test/other', views.interiordesigners, name='other')
+    path('test/lifecoaches', views.lifecoaches, name='lifecoaches'),
+    path('test/professionalphotos', views.professionalphotos, name='professionalphotos'),
+    path('test/personaltrainers', views.personaltrainers, name='personaltrainers'),
+
+    path('test/other', views.other, name='other')
 
 
 
