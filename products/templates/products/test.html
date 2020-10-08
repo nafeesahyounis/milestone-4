@@ -4,9 +4,20 @@
 
 <div class="container h-75" style="margin-top:70px;">
         <div class="row h-75">
-        <div class="col-12 my-auto">
+        <div class="col-6 my-auto">
 
 <p> Categories </p>
+<a href="{% url 'stylists' %}"> Stylists </a>
+<a href="{% url 'interiordesigners' %}"> Interior Designers </a>
+<a href="{% url 'personaltrainers' %}"> Personal Trainers </a>
+<a href="{% url 'professionalphotos' %}"> Professional Photos </a>
+<a href="{% url 'lifecoaches' %}"> Life coaches </a>
+<a href="{% url 'other' %}"> Other </a>
+
+
+
+
+
   <form method="POST" action="{% url 'test' %}" >
 
 
@@ -30,6 +41,21 @@
 
 
 
+  </div>
+  <div class="col-6 my-auto">
+  
+<p> Sort by </p>
+<form method="POST" action="{% url 'test' %}">
+  <select name="sorthightolow" id="sorthightolow">
+    <option value="1" name="1">Price high to low</option>
+  </select>
+  <select name="lowtohigh" id="lowtohigh">
+    <option value="2" name="2">Price low to high</option>
+
+  </select>
+
+
+</form>
   </div>
 </div>
 </div>
