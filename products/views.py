@@ -29,9 +29,15 @@ def test(request):
                 'products':products,
             }
             return render(request,'products/test.html', context)
-        else:
+        if query == '2':
             products = products.order_by('price').reverse()
             print('result descending',products)
+            context = {
+                'products': products,
+            }
+        if query == '3':
+            products = products.order_by('rating').reverse()
+            print('rating',products)
             context = {
                 'products': products,
             }
