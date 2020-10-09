@@ -23,16 +23,17 @@ def test(request):
                 'products':products,
             }
         if query == 1:
-            result = products.order_by('price')
+            products = products.order_by('price')
+            print('result ascending',products)
             context = {
-                'products':result,
+                'products':products,
             }
             return render(request,'products/test.html', context)
-        if query == 2:
-            result = products.order_by('price').reverse()
-            print('result descending',result)
+        else:
+            products = products.order_by('price').reverse()
+            print('result descending',products)
             context = {
-                'products': result,
+                'products': products,
             }
             return render(request,'products/test.html', context)
         
