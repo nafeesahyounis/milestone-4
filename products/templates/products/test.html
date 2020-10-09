@@ -1,95 +1,69 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+<!-- top menu-->
 <div class="container" style="margin-top:70px;">
-<p> Home > Categories > {% for product in products %}{{product.category}} {% empty %} All Products {% endfor %}</p>
+   <p> Home > Categories > {% for product in products %}{{product.category}} {% empty %} All Products {% endfor %}</p>
 </div>
-
+<!-- category filters-->
 <div class="container h-75" style="margin-top:70px;">
-        <div class="row h-75">
-        <div class="col-6 my-auto">
-
-<p> Categories </p>
-<a href="{% url 'stylists' %}"> Stylists </a>
-<a href="{% url 'interiordesigners' %}"> Interior Designers </a>
-<a href="{% url 'personaltrainers' %}"> Personal Trainers </a>
-<a href="{% url 'professionalphotos' %}"> Professional Photos </a>
-<a href="{% url 'lifecoaches' %}"> Life coaches </a>
-<a href="{% url 'other' %}"> Other </a>
-
-
-
-
-
- <!-- <form method="POST" action="{% url 'test' %}" >
-
-
-
-    <label for="category">Choose a category:</label>
-  <select name="category" id="category">
-    <option value="1" name="1">Stylists</option>
-    <option value="2" name="2">Interior Designers</option>
-    <option value="3" name="3">Personal Trainers</option>
-    <option value="4" name="4">Professional Photos</option>
-     <option value="5" name="5">Life coaches</option>
-    <option value="6" name="6">Other</option>
-
-
-  </select>
-  <button type="submit">Submit</button>
-    {% csrf_token %}
-
-  </form> -->
-
-
-
-
-  </div>
-  <div class="col-6 my-auto">
-  
-<p> Sort by </p>
-<form method="POST" action="{% url 'test' %}">
-    {% csrf_token %}
-
-  <select name="sort" id="sort">
-    <option value="1" name="lowtohigh">Price low to high</option>
-    <option value="2" name="hightolow">Price high to low</option>
-    <option value="3" name="highestrated">Highest Rated</option>
-
-
-
-  </select>
-      <button type="submit">Sort</button>
-
-
-
-</form>
-  </div>
+   <div class="row h-75">
+      <div class="col-6 my-auto">
+         <p> Categories </p>
+         <a href="{% url 'stylists' %}"> Stylists </a>
+         <a href="{% url 'interiordesigners' %}"> Interior Designers </a>
+         <a href="{% url 'personaltrainers' %}"> Personal Trainers </a>
+         <a href="{% url 'professionalphotos' %}"> Professional Photos </a>
+         <a href="{% url 'lifecoaches' %}"> Life coaches </a>
+         <a href="{% url 'other' %}"> Other </a>
+         <!-- <form method="POST" action="{% url 'test' %}" >
+            <label for="category">Choose a category:</label>
+            <select name="category" id="category">
+            <option value="1" name="1">Stylists</option>
+            <option value="2" name="2">Interior Designers</option>
+            <option value="3" name="3">Personal Trainers</option>
+            <option value="4" name="4">Professional Photos</option>
+             <option value="5" name="5">Life coaches</option>
+            <option value="6" name="6">Other</option>
+            
+            
+            </select>
+            <button type="submit">Submit</button>
+            {% csrf_token %}
+            
+            </form> -->
+      </div>
+      <!-- sort filters-->
+      <div class="col-6 my-auto">
+         <p> Sort by </p>
+         <form method="POST" action="{% url 'test' %}">
+            {% csrf_token %}
+            <select name="sort" id="sort">
+               <option value="1" name="lowtohigh">Price low to high</option>
+               <option value="2" name="hightolow">Price high to low</option>
+               <option value="3" name="highestrated">Highest Rated</option>
+            </select>
+            <button type="submit">Sort</button>
+         </form>
+      </div>
+   </div>
 </div>
-</div>
-<div class="row">
-        <div class="col-12">
-    <p> All Products </p>
-        
-    working?
-        {% for product in products %}
-        <p>{{ product.name }}</p>
-        <p>{{ product.category }}</p>
-
-        <p>{{ product.description }}</p>
-        <p>{{ product.sku }}</p>
-        <p>{{ product.price }}</p>
-        <p>{{ product.rating }}</p>
-
-
-
-
-        {% endfor %}
-
-    </div>
-
-</div>
-
-
+<!-- products-->
+<main>
+   <div class="container">
+      <div class="row">
+         <div class="col-4">
+            <p> All Products </p>
+            {% for product in products %}
+            <p>{{ product.name }}</p>
+            <p>{{ product.category }}</p>
+            <p>{{ product.description }}</p>
+            <p>{{ product.sku }}</p>
+            <p>{{ product.price }}</p>
+            <p>{{ product.rating }}</p>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</main>
 {% endblock %}
