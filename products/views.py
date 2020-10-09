@@ -22,7 +22,7 @@ def test(request):
         context = {
                 'products':products,
             }
-        if query == 1:
+        if query == '1':
             products = products.order_by('price')
             print('result ascending',products)
             context = {
