@@ -104,6 +104,10 @@ def other(request):
     return render(request, 'products/test.html', context)
 
 
+def listing(request):
+    
+    
+    return render(request, 'products/listing.html')
 
 #post name of category
 #
