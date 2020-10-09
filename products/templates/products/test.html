@@ -10,6 +10,7 @@
    <div class="row h-75">
       <div class="col-6 my-auto">
          <p> Categories </p>
+         <p> {{currentCategory}}</p>
          <a href="{% url 'stylists' %}"> Stylists </a>
          <a href="{% url 'interiordesigners' %}"> Interior Designers </a>
          <a href="{% url 'personaltrainers' %}"> Personal Trainers </a>
@@ -36,7 +37,7 @@
       <!-- sort filters-->
       <div class="col-6 my-auto">
          <p> Sort by </p>
-         <form method="POST" action="{% url 'test' %}">
+         <form method="POST" action="{% url currentCategory %}">
             {% csrf_token %}
             <select name="sort" id="sort">
                <option value="1" name="lowtohigh">Price low to high</option>

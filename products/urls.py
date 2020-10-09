@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    path('test', views.test, name='test'),
+    path('test/', views.test, name='test'),
     path('test/stylists', views.stylists, name='stylists'),
     path('test/interiordesigners', views.interiordesigners, name='interiordesigners'),
     path('test/lifecoaches', views.lifecoaches, name='lifecoaches'),
