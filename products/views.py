@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 from products.contexts import sort
 
@@ -180,7 +180,13 @@ def other(request):
     return render(request, 'products/test.html', context)
 
 
-def listing(request):
+def listing(request, product_id):
+
+    get_object_or_404(Product, pk=product_id)
+
+    context = context = {
+            'product': product,
+        }
     
     
     return render(request, 'products/listing.html')
