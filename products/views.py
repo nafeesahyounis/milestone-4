@@ -1,42 +1,10 @@
 from django.shortcuts import render
 from .models import Product, Category
+from products.contexts import sort
 
 # Create your views here.
 
 
-def sort(id, currentCategory):
-    
-    query = request.POST['sort']
-    currentCategory = currentCategory
-    products = Product.objects.filter(category=id)
-    context = {
-            'products':products,
-        }
-    if query == '1':
-        products = products.order_by('price')
-        context = {
-            'products': products,
-            'currentCategory': currentCategory,
-        }
-        return render(request,'products/test.html', context)
-    if query == '2':
-        products = products.order_by('price').reverse()
-        print('result descending', products)
-        context = {
-            'products': products,
-            'currentCategory': currentCategory,
-
-            }
-        return render(request, 'products/test.html', context)
-    if query == '3':
-        products = products.order_by('rating').reverse()
-        print('rating',products)
-        context = {
-            'products': products,
-            'currentCategory': currentCategory,
-
-        }
-        return render(request, 'products/test.html', context)
 
 
 
@@ -112,7 +80,7 @@ def stylists(request):
         print('this is being printed', query)
         currentCategory = 'stylists'
         context = {
-                'products':products,
+                'products': products,
             }
         if query == '1':
             products = products.order_by('price')
@@ -159,8 +127,9 @@ def stylists(request):
 def interiordesigners(request):
 
     products = Product.objects.filter(category='2')
-    if request.METHOD =="POST":
-        sort(2, interiordesigners)
+    if request.method =="POST":
+
+        sort(request,2, interiordesigners)
     else:
         """A view to return the test page"""
         products = Product.objects.filter(category='2')
