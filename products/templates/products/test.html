@@ -62,6 +62,8 @@
             <p>{{ product.sku }}</p>
             <p>{{ product.price }}</p>
             <p>{{ product.rating }}</p>
+            <a href="{% url 'listing' product.id %}"> View Details </a>
+
             {% endfor %}
          </div>
       </div>
