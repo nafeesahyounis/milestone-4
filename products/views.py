@@ -182,11 +182,11 @@ def other(request):
 
 def listing(request, product_id):
 
-    product = get_object_or_404(Product, pk=product_id)
-    context = {
-            'product': product,
-        }
-    return render(request, 'products/listing.html', context)
+   product = get_object_or_404(Product, pk=product_id)
+   context = {
+           'product': product,
+       }
+   return render(request, 'products/listing.html', context)
 
 
 #post name of category
