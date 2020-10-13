@@ -41,6 +41,8 @@ def test(request):
             print('result descending', products)
             context = {
                 'products': products,
+                'currentCategory': currentCategory,
+
             }
             print("2")
             return render(request, 'products/test.html', context)
