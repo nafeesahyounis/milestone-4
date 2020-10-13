@@ -25,24 +25,26 @@ def test(request):
         currentCategory = 'test'
         products = Product.objects.all()
         context = {
-                'products':products,
+                'products': products,
             }
         if query == '1':
             products = products.order_by('price')
-            print('result ascending',products)
+            print('result ascending', products)
             context = {
-                'products':products,
-                'currentCategory':currentCategory,
+                'products': products,
+                'currentCategory': currentCategory,
             }
             print("1")
-            return render(request,'products/test.html', context)
+            return render(request, 'products/test.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
-            print('result descending',products)
+            print('result descending', products)
             context = {
                 'products': products,
             }
             print("2")
+            return render(request, 'products/test.html', context)
+
         if query == '3':
             products = products.order_by('rating').reverse()
             print('rating',products)
@@ -59,7 +61,7 @@ def test(request):
     else:
         """A view to return the test page"""
         products = Product.objects.all()
-        currentCategory ='test'
+        currentCategory = 'test'
 
         context = {
          'products': products,
