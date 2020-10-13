@@ -26,7 +26,7 @@ urlpatterns = [
     path('test/professionalphotos', views.professionalphotos, name='professionalphotos'),
     path('test/personaltrainers', views.personaltrainers, name='personaltrainers'),
     path('test/other', views.other, name='other'),
-    path('<product_id>', views.listing, name='listing')
+    path('products/<product_id>', views.listing, name='listing')
 
 
 
