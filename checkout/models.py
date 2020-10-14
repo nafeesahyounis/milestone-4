@@ -6,7 +6,10 @@ from products.models import Product
 class Cart(models.Model):
 
     product = models.ManyToManyField(Product, null=True, blank=True),
-    total = models.DecimalField(max_digits=100, decimal_places=2, default=0.00),
+    total = models.DecimalField(max_digits=100, decimal_places=2, default=0.00)
+
+    def __str__(self):
+        return self.name
 
     def __unicode__(self):
         return "Cart if %s" % (self.id)
