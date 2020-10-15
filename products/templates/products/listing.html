@@ -3,10 +3,11 @@
 {% block content %}
 
 <div class="col-12" style="margin-top:70px;">
+<form action="{% url 'update_cart' product.id %}" method="POST">
+{% csrf_token %}
+<h1> {{ product.name }} </h1>
 
-<h1> {{ product.name }} </h2>
-
-<h2> <a href="{% url 'checkouttest' %}"> Add to Cart </a></h2> 
-
+ <button type="submit">Add To Cart</button>
+</form>
 </div>
 {% endblock %}
