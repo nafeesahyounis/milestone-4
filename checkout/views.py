@@ -12,11 +12,16 @@ def checkouttest(request):
 
 def update_cart(request, product_id):
     if request.method == 'POST':
+        cart = request.session.get('cart', {})
 
-        cart = Cart.objects.all()[0]
+        print(cart)
         product = get_object_or_404(Product, pk=product_id)
-        cart.products.add(product)
-        context = {'cart': cart}
+        print(product)
+        cart[product_id] = 1
+        request.session['cart'] = cart
+
+        print(cart)
+        context = {'item': product}
         print(context)
         return render(request, 'checkout/checkouttest.html', context)
     else:
