@@ -10,20 +10,20 @@ def checkouttest(request):
     return render(request, 'checkout/checkouttest.html')
 
 
-def update_cart(request, product_id):
+def add_to_cart(request, product_id):
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
-        print(cart)
+        print(f"cart {cart}")
         product = get_object_or_404(Product, pk=product_id)
         print(product)
-        cart[product_id] = 1
+        cart[product.id] = 1
         request.session['cart'] = cart
 
         print(cart)
         context = {'item': product}
         print(context)
-        return render(request, 'checkout/checkouttest.html', context)
+        return render(request, 'checkout/checkouttest.html', cart)
     else:
         return render(request, 'checkout/checkouttest.html', context)
 

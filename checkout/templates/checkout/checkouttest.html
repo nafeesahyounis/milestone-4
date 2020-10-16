@@ -1,5 +1,4 @@
 <h1> Checkout </h1>
-
-{% for item in cart.products.all %}
-{{ item }}
-{% endfor %}
+{% for items in cart_items %}
+   {{ items.product }}
+  {% endfor %}

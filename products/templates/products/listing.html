@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="col-12" style="margin-top:70px;">
-<form action="{% url 'update_cart' product.id %}" method="POST">
+<form action="{% url 'add_to_cart' product.id %}" method="POST">
 {% csrf_token %}
 <h1> {{ product.name }} </h1>
 
