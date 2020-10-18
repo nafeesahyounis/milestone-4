@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's^i-z7#h62m&8#4r92m2hx@i(gx-_^yd$m7=1p0yvyfvn%54wf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['code-institute-milestone4.herokuapp.com', 'localhost']
 
