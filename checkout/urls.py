@@ -20,6 +20,5 @@ from . import views
 
 urlpatterns = [
     path('checkouttest', views.checkouttest, name='checkouttest'),
-    path('add_to_cart/<product_id>', views.add_to_cart, name='add_to_cart')
 
 ]
