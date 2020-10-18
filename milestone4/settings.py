@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     'cart',
 
     ##
-    'crispyforms',
-    'storage'
+    
 ]
 
 MIDDLEWARE = [
