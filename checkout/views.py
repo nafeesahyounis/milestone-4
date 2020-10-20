@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import OrderItem
 from .forms import OrderCreateForm
+from cart.contexts import cart_items
 
 # Create your views here.
 
@@ -13,6 +14,7 @@ def checkouttest(request):
 def create_order(request):
 
     cart = request.session.get('cart', {})
+    print('these are the', cart_items)
 
     print('cart printed', cart)
     if request.method == 'POST':
@@ -20,10 +22,11 @@ def create_order(request):
         if form.is_valid():
             order = form.save()
             for item in cart:
-                OrderItem.objects.create(order=order,
-                                        product=item['product'],
-                                        price=item['price'],
-                                        quantity=item['quantity'])
+                new_item = OrderItem.objects.create(order=order,
+                                                    product=item['product'],
+                                                    price=item['price'],
+                                                    quantity=item['quantity'])
+                print('new item is', new_item)
             # clear the cart
             cart.clear()
             return render(request,
