@@ -2,3 +2,4 @@
 {% for items in cart_items %}
    {{ items.product }}
   {% endfor %}
+ <a href="{% url 'create_order' %}"> Go To Cart </a>
