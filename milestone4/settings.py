@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'checkout',
     'cart',
 
+    'crispy_forms',
+
     ##
     
 ]
@@ -64,6 +66,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'milestone4.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -187,3 +190,6 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
+print(f"MEDIA_URL: {MEDIA_URL},\ndatabase url: {DATABASE_URL} and DATABASES {DATABASES}")
