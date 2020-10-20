@@ -14,7 +14,7 @@ def create_order(request):
 
     cart = request.session.get('cart', {})
 
-    print(cart)
+    print('cart printed', cart)
     return render(request, 'checkout/checkouttest.html')
 
 

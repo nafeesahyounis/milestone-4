@@ -1,5 +1,8 @@
 <h1> Cart </h1>
+    <p> Hello world </p>
+
 {% for items in cart_items %}
    {{ items.product }}
   {% endfor %}
-<a href
+
+<a href="{% url 'create_order' %}"> Go To Cart </a>
