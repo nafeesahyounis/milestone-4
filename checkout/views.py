@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect,reverse, get_object_or_404
+from django.shortcuts import render, redirect,reverse
 from .models import OrderItem
 from .forms import OrderCreateForm
 from products.models import Product
@@ -20,28 +20,50 @@ def create_order(request):
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save()
+            order.save()
+
             for key, value in cart.items():
                 try:
                     product = Product.objects.get(id=key)
                     print('product:', product)
                     if isinstance(value, int):
-                        order_line_item = OrderItem(
-                            order=order,
-                            product=product,
-                            quantity=value,
-                        )
+                        print('am being executed')
+                        print(product)
+                        print(order)
+                        print(value)
+                        print('order item', OrderItem)
+                        order_line_item = OrderItem(order=order,
+                                                    product=product,
+                                                    quantity=value,)
+                        print('beginning', order_line_item)
+                        #order_line_item.order = order
+                        # order_line_item.save()
+                        #print('next line', order_line_item)
+                        #order_line_item.product = product
+                        #order_line_item.quantity = value
                         order_line_item.save()
+                        print('save')
+                        print('test', order_line_item)
+                        #order_line_item = OrderItem(
+                        #    order=order,
+                        #    product=product,
+                        #    quantity=value,
+                        #)
+                        #print('before', order_line_item)
+                        #order_line_item.save()
                         print('saved', order_line_item)
                     else:
                         print('we are jumping')
 
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
+                    print('does not exist')
+                    
                     order.delete()
-                    return redirect(reverse('checkout/order_created.html'))
+                    return render(request, 'checkout/order_created.html')
+            return render(request, 'checkout/order_created.html')
+        return render(request, 'checkout/order_created.html')
+
+
     else:
         form = OrderCreateForm()
         (print, 'else clause')

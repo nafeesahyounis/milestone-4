@@ -24,7 +24,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 SECRET_KEY = 's^i-z7#h62m&8#4r92m2hx@i(gx-_^yd$m7=1p0yvyfvn%54wf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['code-institute-milestone4.herokuapp.com', 'localhost']
 
