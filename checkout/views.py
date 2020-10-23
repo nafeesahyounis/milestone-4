@@ -8,7 +8,13 @@ from products.models import Product
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-    return render(request, 'checkout/checkouttest.html')
+
+    context = {
+        'stripe_public_key': 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3',
+        'client_secret': 'test_client_secret',
+    }
+
+    return render(request, 'checkout/checkouttest.html', context)
 
 
 def create_order(request):
