@@ -13,6 +13,7 @@
 <h1> Cart </h1>
 {% for items in cart_items %}
    {{ items.product }}
+   {{items.price}}
   {% endfor %}
 
 <form action="/charge" method="post" id="payment-form">

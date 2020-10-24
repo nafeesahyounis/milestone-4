@@ -8,9 +8,11 @@ def cart_items(request):
 
     for key, value in cart.items():
         product = get_object_or_404(Product, pk=key)
+        price = product.price
         cart_items.append(
             {
                 'product': product,
+                'price': price
             }
         )
     return {

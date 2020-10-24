@@ -174,6 +174,13 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#stripe
+
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
+
 if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'code-institute-milestone4'
     AWS_S3_REGION_NAME = 'eu-central-1'
@@ -190,6 +197,8 @@ if 'USE_AWS' in os.environ:
     # Override static and media URLs in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+
 
 
 print(f"MEDIA_URL: {MEDIA_URL},\ndatabase url: {DATABASE_URL} and DATABASES {DATABASES}")

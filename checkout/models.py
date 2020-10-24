@@ -32,12 +32,8 @@ class OrderItem(models.Model):
                                 on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
-    def save(self, *args, **kwargs):
-        """
-        Override the original save method to set the lineitem total
-        and update the order total.
-        """
-        self.lineitem_total = self.product.price * self.quantity
-        super().save(*args, **kwargs)
+    total_cost = models.DecimalField(default=0, max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+
+    
 
     

@@ -1,17 +1,29 @@
 from django.shortcuts import render, redirect,reverse
+from django.conf import settings
 from .models import OrderItem
 from .forms import OrderCreateForm
 from products.models import Product
+from django.contrib import messages
+from cart.contexts import cart_items
+import stripe 
 
 # Create your views here.
 
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, "Your cart is currently empty.")
+        return redirect(reverse('test'))
+    
+    existing_cart = cart_items(request)
+    total = existing_cart.price
+    stripe_total = round(total*100)
     context = {
         'stripe_public_key': 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3',
         'client_secret': 'test_client_secret',
+        'total': total,
     }
 
     return render(request, 'checkout/checkouttest.html', context)
@@ -37,10 +49,13 @@ def create_order(request):
                         print(product)
                         print(order)
                         print(value)
+                        print('price', product.price)
+                        total_cost = product.price
                         print('order item', OrderItem)
                         order_line_item = OrderItem(order=order,
                                                     product=product,
-                                                    quantity=value,)
+                                                    quantity=value,
+                                                    total_cost=total_cost)
                         print('beginning', order_line_item)
                         #order_line_item.order = order
                         # order_line_item.save()
@@ -65,7 +80,7 @@ def create_order(request):
                     print('does not exist')
                     
                     order.delete()
-                    return render(request, 'checkout/order_created.html')
+                    return render(request, 'checkout/order_created.html', order_line_item)
             return render(request, 'checkout/order_created.html')
         return render(request, 'checkout/order_created.html')
 
