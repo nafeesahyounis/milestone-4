@@ -12,7 +12,7 @@ import stripe
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_public_key = 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3'
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = request.session.get('cart', {})
@@ -28,6 +28,8 @@ def checkouttest(request):
     print(total_cost)
     stripe_total = round(total_cost*100)
     stripe.api_key = stripe_secret_key
+    print(stripe_secret_key)
+    print('public key', stripe_public_key)
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
