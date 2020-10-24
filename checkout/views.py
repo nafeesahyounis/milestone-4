@@ -33,10 +33,16 @@ def checkouttest(request):
         currency=settings.STRIPE_CURRENCY
 
     )
+    client_secret = intent.client_secret
     print(intent)
 
+    context = {
+        'stripe_public_key': stripe_public_key,
+        'client_secret': client_secret
 
-    return render(request, 'checkout/checkouttest.html')
+
+    }
+    return render(request, 'checkout/checkouttest.html', context)
 
 
 def create_order(request):
