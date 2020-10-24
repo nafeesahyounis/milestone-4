@@ -13,16 +13,20 @@ import stripe
 def checkouttest(request):
     """A view to return the checkouttest page"""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.SECRET_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "Your cart is currently empty.")
         return redirect(reverse('test'))
     
-    existing_cart = cart_items(request)
-    total = existing_cart.price
-    stripe_total = round(total*100)
+    for key, value in cart.items():
+        product = Product.objects.get(id=key)
+        print('price', product.price)
+        # TO SELF: ADD FUNCTIONALITY THAT ADDS BOTH VALUES TOGETHER. CURRENTLY ONLY TAKES ONE. FIX THISSSSS
+        total_cost = product.price
+    print(total_cost)
+    stripe_total = round(total_cost*100)
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
@@ -32,7 +36,7 @@ def checkouttest(request):
     print(intent)
 
 
-    return render(request, 'checkout/checkouttest.html', context)
+    return render(request, 'checkout/checkouttest.html')
 
 
 def create_order(request):
