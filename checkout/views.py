@@ -30,17 +30,19 @@ def checkouttest(request):
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY
-
+        currency=settings.STRIPE_CURRENCY,
     )
+
     client_secret = intent.client_secret
     print(intent)
 
+    if not stripe_public_key:
+        messages.warning(request, "Stripe public key is missing \
+        Did you forget to set it in your environment?")
+
     context = {
         'stripe_public_key': stripe_public_key,
-        'client_secret': client_secret
-
-
+        'client_secret': client_secret,
     }
     return render(request, 'checkout/checkouttest.html', context)
 
