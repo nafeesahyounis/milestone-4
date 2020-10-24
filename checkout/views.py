@@ -12,6 +12,9 @@ import stripe
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.SECRET_KEY
+
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "Your cart is currently empty.")
@@ -20,11 +23,14 @@ def checkouttest(request):
     existing_cart = cart_items(request)
     total = existing_cart.price
     stripe_total = round(total*100)
-    context = {
-        'stripe_public_key': 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3',
-        'client_secret': 'test_client_secret',
-        'total': total,
-    }
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY
+
+    )
+    print(intent)
+
 
     return render(request, 'checkout/checkouttest.html', context)
 
