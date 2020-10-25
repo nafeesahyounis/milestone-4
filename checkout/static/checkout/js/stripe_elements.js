@@ -1,7 +1,7 @@
 console.log('i am working')
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 console.log('publickey', stripePublicKey)
-var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var clientSecret = $('#id_stripe_client_secret').text().slice(1, -1);
 console.log('client secret', clientSecret)
 var stripe = Stripe(stripePublicKey);
 
