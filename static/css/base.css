@@ -7,6 +7,25 @@ h5{
     font-family: 'Merriweather', serif;
 }
 
+h1{
+    font-family: 'Playfair Display', serif;
+
+}
+h4{
+    font-family: 'Merriweather', serif;
+
+}
+
 .interior-design-landing{
     color:#2A2323;
+}
+
+.about{
+    margin-top:8%;
+    text-align:center;
+
+}
+
+hr{
+    margin:auto;
 }
