@@ -3,8 +3,13 @@ a {
 
 }
 
+nav{
+    background-color: #ae877e;
+}
+
 h5{
     font-family: 'Merriweather', serif;
+    color:#2A2323;
 }
 
 h1{
@@ -18,6 +23,10 @@ h4{
 
 .interior-design-landing{
     color:#2A2323;
+}
+
+.stylists-landing{
+   background-color:#bfaba8;
 }
 
 .about{
