@@ -6,13 +6,13 @@ from products.models import Product
 from django.contrib import messages
 from cart.contexts import cart_items
 import stripe 
-
+from milestone4.settings import STRIPE_SECRET_KEY
 # Create your views here.
 
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-    stripe_public_key = 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3'
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = request.session.get('cart', {})
