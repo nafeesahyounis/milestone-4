@@ -1,21 +1,18 @@
-from django.shortcuts import render, redirect,reverse
+from django.shortcuts import render, redirect,reverse, get_object_or_404
 from django.conf import settings
-from .models import OrderItem
+from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from products.models import Product
 from django.contrib import messages
 from cart.contexts import cart_items
 import stripe 
-from milestone4.settings import STRIPE_SECRET_KEY
 # Create your views here.
 
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-    stripe_public_key = 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3'
-
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     cart = request.session.get('cart', {})
     if not cart:
         messages.error(request, "Your cart is currently empty.")
@@ -37,8 +34,7 @@ def checkouttest(request):
     )
 
     client_secret = intent.client_secret
-    print(intent)
-    print ('client secret print', client_secret)
+    print('client secret print', client_secret)
 
     if not stripe_public_key:
         messages.warning(request, "Stripe public key is missing \
@@ -47,8 +43,7 @@ def checkouttest(request):
     context = {
         'stripe_public_key': stripe_public_key,
         'client_secret': client_secret,
-    }
-
+    } 
     return render(request, 'checkout/checkouttest.html', context)
 
 
@@ -127,6 +122,25 @@ def create_order(request):
 
 
 
+def checkout_success(request, order_number):
+    """
+    Handle successful checkouts
+    """
+    order = get_object_or_404(Order, order_number=order_number)
+    print('order number', order_number)
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+
+    if 'cart' in request.session:
+        del request.session['cart']
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
+
+    return render(request, template, context)
 
 
 
