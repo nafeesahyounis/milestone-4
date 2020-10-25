@@ -12,7 +12,8 @@ from milestone4.settings import STRIPE_SECRET_KEY
 
 def checkouttest(request):
     """A view to return the checkouttest page"""
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_public_key = 'pk_test_51HeN9hB5aKgnHW7wHPLQLA1rmlXo4byZaNMCvUbLwpsTe1KjTMa6j8SW99nBxgMOnKmBUUo5Tl3BgD5Y2lGSkZEb00nPwPqkW3'
+
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     cart = request.session.get('cart', {})
@@ -37,6 +38,7 @@ def checkouttest(request):
 
     client_secret = intent.client_secret
     print(intent)
+    print ('client secret print', client_secret)
 
     if not stripe_public_key:
         messages.warning(request, "Stripe public key is missing \
@@ -46,6 +48,7 @@ def checkouttest(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': client_secret,
     }
+
     return render(request, 'checkout/checkouttest.html', context)
 
 

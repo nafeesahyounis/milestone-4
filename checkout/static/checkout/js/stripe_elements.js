@@ -1,6 +1,8 @@
 console.log('i am working')
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
-var clientSecret = $('#id_client_secret').text().slice(1, -1);
+console.log('publickey', stripePublicKey)
+var clientSecret = "pi_1Hg95EB5aKgnHW7wpVnFk6c4_secret_OvO1No6JANN9ya6qD1YG6BD9u"
+console.log('client secret', clientSecret)
 var stripe = Stripe(stripePublicKey);
 
 var elements = stripe.elements();
@@ -47,6 +49,7 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
+    console.log('here we are')
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
