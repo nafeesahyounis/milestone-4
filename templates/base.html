@@ -47,9 +47,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'test' %}">Shop</a>
-      </li>
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Shop
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="{% url 'test' %}">All Services</a>
+    <a class="dropdown-item" href="{% url 'stylists' %}">Stylists</a>
+    <a class="dropdown-item" href="#">Personal Trainers</a>
+    <a class="dropdown-item" href="#">Professional Photographers</a>
+
+
+  </div>
+</div>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
       </li>

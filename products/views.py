@@ -4,12 +4,7 @@ from products.contexts import sort
 
 # Create your views here.
 
-
-
-
-
 def test(request):
-
     categories = Category.objects.all()
     print(categories)
 
@@ -57,29 +52,22 @@ def test(request):
             }
             print("3")
             return render(request, 'products/test.html', context)
-        
-
-
     else:
         """A view to return the test page"""
         products = Product.objects.all()
         currentCategory = 'test'
 
         context = {
-         'products': products,
-         'currentCategory': currentCategory,
+            'products': products,
+            'currentCategory': currentCategory,
         }
         
-        return render(request, 'products/test.html', context)
-
-        
+        return render(request, 'products/test.html', context)   
 
 def stylists(request):
-
-    products = Product.objects.filter(category='1')
-
+    products = Product.objects.filter(category='2')
+    print(products)
     if request.method == "POST":
-
         query = request.POST['sort']
         print('this is being printed', query)
         currentCategory = 'stylists'
@@ -90,8 +78,8 @@ def stylists(request):
             products = products.order_by('price')
             print('result ascending',products)
             context = {
-                'products':products,
-                'currentCategory':currentCategory,
+                'products': products,
+                'currentCategory': currentCategory,
             }
             print("1")
             return render(request,'products/test.html', context)
@@ -100,13 +88,13 @@ def stylists(request):
             print('result descending',products)
             context = {
                 'products': products,
-                'currentCategory':currentCategory,
+                'currentCategory': currentCategory,
 
             }
             return render(request, 'products/test.html', context)
         if query == '3':
             products = products.order_by('rating').reverse()
-            print('rating',products)
+            print('rating', products)
             context = {
                 'products': products,
                 'currentCategory': currentCategory,
@@ -118,7 +106,7 @@ def stylists(request):
 
     else:
         """A view to return the test page"""
-        products = Product.objects.filter(category='1')
+        products = Product.objects.filter(category='2')
         currentCategory ='stylists'
 
         context = {
