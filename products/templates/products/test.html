@@ -3,7 +3,7 @@
 {% block content %}
 <!-- top menu-->
 <div class="container" style="margin-top:70px;">
-   <p> Home > Categories > {% for product in products %}{{product.category}} {% empty %} All Products {% endfor %}</p>
+   <p> <a href="{% url 'home' %}">Home </a>  > Categories > {{currentCategory}}</p>
 </div>
 <!-- category filters-->
 <div class="container h-75" style="margin-top:70px;">

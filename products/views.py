@@ -180,6 +180,9 @@ def listing(request, product_id):
        }
    return render(request, 'products/listing.html', context)
 
+def categories(request):
+    return render(request, 'products/categories.html')
+
 
 #post name of category
 #
