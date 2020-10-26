@@ -76,19 +76,23 @@ def stylists(request):
             }
         if query == '1':
             products = products.order_by('price')
-            print('result ascending',products)
+            print('result ascending', products)
+            lowToHigh = "Products are now listed from highest to lowest price"
             context = {
                 'products': products,
                 'currentCategory': currentCategory,
+                'filter': lowToHigh
             }
             print("1")
-            return render(request,'products/test.html', context)
+            return render(request, 'products/test.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
             print('result descending', products)
+            highToLow = "Products are now listed from lowest to highest price"
             context = {
                 'products': products,
                 'currentCategory': currentCategory,
+                'filter': highToLow
 
             }
             return render(request, 'products/test.html', context)
@@ -121,11 +125,11 @@ def interiordesigners(request):
     products = Product.objects.filter(category='2')
     if request.method =="POST":
 
-        sort(request,2, interiordesigners)
+        sort(request, 2, interiordesigners)
     else:
         """A view to return the test page"""
         products = Product.objects.filter(category='2')
-        currentCategory ='interiordesigners'
+        currentCategory = 'interiordesigners'
 
         context = {
          'products': products,
