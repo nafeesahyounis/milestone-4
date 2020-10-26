@@ -38,7 +38,8 @@ h4{
 }
 
 hr{
-    margin:auto;
+    margin-top:5%;
+     
 }
 
 @media only screen and (max-width: 600px) {
@@ -50,16 +51,18 @@ hr{
   }
 }
 
-.circle {
-  width: 40px;
-  height: 40px;
-  background-color: #2A2323;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -20px 0 0 -20px;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  z-index: 10;
+.listing-description{
+    font-size:1.5em;
+    font-family: 'Merriweather', serif;
+    color:#b4764f
+
+
 }
+
+.description-text{
+    font-size:1em;
+    font-family: 'Playfair Display', serif;
+
+
+}
+
