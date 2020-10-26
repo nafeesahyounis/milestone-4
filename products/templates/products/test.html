@@ -58,8 +58,8 @@
 
             {% for product in products %}
             
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 card">
+            <div class="card-body">
             <p>{{ product.name }}</p>
             <p>{{ product.category }}</p>
             <p>{{ product.description }}</p>
@@ -67,6 +67,7 @@
             <p>{{ product.price }}</p>
             <p>{{ product.rating }}</p>
             <a href="{% url 'listing' product.id %}"> View Details </a>
+            </div>
                                  </div>
 
 

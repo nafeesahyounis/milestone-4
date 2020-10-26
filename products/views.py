@@ -85,7 +85,7 @@ def stylists(request):
             return render(request,'products/test.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
-            print('result descending',products)
+            print('result descending', products)
             context = {
                 'products': products,
                 'currentCategory': currentCategory,
