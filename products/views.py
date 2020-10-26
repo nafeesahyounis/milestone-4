@@ -178,11 +178,18 @@ def other(request):
 
 def listing(request, product_id):
 
-   product = get_object_or_404(Product, pk=product_id)
-   context = {
-           'product': product,
-       }
-   return render(request, 'products/listing.html', context)
+    product = get_object_or_404(Product, pk=product_id)
+    currentCategory = product.category
+    print('category', type(currentCategory))
+    result = str(currentCategory)
+    print('result', result)
+    context = {
+            'product': product,
+            'currentCategory': currentCategory,
+            'result': result
+        }
+    return render(request, 'products/listing.html', context)
+
 
 def categories(request):
     return render(request, 'products/categories.html')
