@@ -120,25 +120,20 @@ def stylists(request):
         
         return render(request, 'products/test.html', context)
 
+
 def interiordesigners(request):
 
-    products = Product.objects.filter(category='2')
-    if request.method =="POST":
+    products = Product.objects.filter(category='1')
 
-        sort(request, 2, interiordesigners)
-    else:
-        """A view to return the test page"""
-        products = Product.objects.filter(category='2')
-        currentCategory = 'interiordesigners'
+    currentCategory = 'interiordesigners'
 
-        context = {
-         'products': products,
-         'currentCategory': currentCategory,
+    context = {
+        'products': products,
+        'currentCategory': currentCategory,
         }
         
-        return render(request, 'products/test.html', context)
-
-
+    return render(request, 'products/test.html', context)
+ 
     
 def personaltrainers(request):
     
