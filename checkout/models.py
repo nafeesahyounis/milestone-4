@@ -1,5 +1,7 @@
+import uuid
 from django.db import models
 from products.models import Product
+from django.conf import settings
 
 
 class Order(models.Model):
@@ -15,6 +17,12 @@ class Order(models.Model):
 
     class Meta:
         ordering = ('-created',)
+    
+    def _generate_order_number(self):
+        """
+        Generate a random, unique order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
 
     def __str__(self):
         return f'Order {self.id}'

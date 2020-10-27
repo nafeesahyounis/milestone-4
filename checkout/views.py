@@ -70,9 +70,9 @@ def checkouttest(request):
                     except Product.DoesNotExist:
                         print('does not exist')
                         order.delete()
-                    return redirect(reverse('cart'))
+                        return redirect(reverse('cart'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success'))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -91,8 +91,7 @@ def checkouttest(request):
         print('public key', stripe_public_key)
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+            currency=settings.STRIPE_CURRENCY,)
         form = OrderCreateForm()
         print('form', form)
         client_secret = intent.client_secret
@@ -220,27 +219,25 @@ def create_order(request):
    #               {'cart': cart, 'form': form})
 
 
-
-
-def checkout_success(request, order_number):
+def checkout_success(request):
     """
     Handle successful checkouts
     """
-    order = get_object_or_404(Order, order_number=order_number)
-    print('order number', order_number)
+    #order = get_object_or_404(Order, order_number=order_number)
+    #print('order number', order_number)
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        Your order number is ____. A confirmation \
+        email will be sent to.')
 
     if 'cart' in request.session:
         del request.session['cart']
 
     template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-    }
+    #context = {
+    #    'order': order,
+    #}
 
-    return render(request, template, context)
+    return render(request, template)
 
 
 
