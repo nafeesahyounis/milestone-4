@@ -21,5 +21,7 @@ from . import views
 urlpatterns = [
     path('checkouttest', views.checkouttest, name='checkouttest'),
     path('create_order', views.create_order, name='create_order'),
-    path('checkout_success', views.checkout_success, name='checkout_success')
+    path('checkout_success', views.checkout_success, name='checkout_success'),
+    path('wh/', webhook, name='webhook'),
+
 ]
