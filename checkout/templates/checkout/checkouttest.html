@@ -7,6 +7,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <!-- Stripe payment-->
         <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"> </script>
 </head>
 
 <h1> Cart </h1>
@@ -14,7 +17,7 @@
    {{ items.product }}
    {{items.price}}
   {% endfor %}
-<form aaction="{% url 'checkouttest' %}" method="POST" id="payment-form">
+<form action="{% url 'checkouttest' %}" method="POST" id="payment-form">
     {{ form }}
     {% csrf_token %}
   
@@ -38,6 +41,15 @@
 							</span>
 						</button>
 </form>
+
+<!-- loading overlay for when card is being processed, taken from boutique ado project codeinstitute.com-->
+<div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
+    </div>
 {% block postloadjs %}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_stripe_client_secret" }}
