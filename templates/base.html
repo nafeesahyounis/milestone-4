@@ -1,126 +1,96 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-  <head>
-
-    {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock %}
-
-    {% block extra_meta %}
-    {% endblock %}
-
-    {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    {% endblock %}
-
-    {% block extra_css %}
-    {% endblock %}
-
-    {% block corejs %}
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <!-- Stripe payment-->
-        <script src="https://js.stripe.com/v3/"></script>
-        <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-
-
-
-
-    {% endblock %}
-
-    {% block extra_js %}
-    {% endblock %}
-    </head>
-
-             <!--NAVBAR and LOGO, Navbar toggles in mobile view for ease of navigation on smaller screen size-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <a class="navbar-brand" href="#">lifestyle.redesigned</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Shop
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{% url 'test' %}">All Services</a>
-    <a class="dropdown-item" href="{% url 'stylists' %}">Stylists</a>
-    <a class="dropdown-item" href="#">Personal Trainers</a>
-    <a class="dropdown-item" href="#">Professional Photographers</a>
-
-
-  </div>
-</div>
-      
-    </ul>
-    <span class="navbar-text"> 
-<form class="form-inline">
-        <a class="nav-link" href="{% url 'account_signup' %}">Register </a>
-        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<i class="fas fa-search"></i>
-
-  </button>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{% url 'test' %}">Search</a>
-   
-<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-  </div>
-
-    
-    <i class="fas fa-shopping-bag"></i>
-
-
-  </form>    </span>
-  </div>
-  </nav>
-                      
-
-    <!-- Modal -->
-	<div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
-				</div>
-
-				<div class="modal-body">
-					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					</p>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-	
-	
-
-    
-
-    {% block content %}
-    {% endblock %}
-
-    {% block postloadjs %}
-    {% endblock %}
-    
-    
-  </body>
+   <head>
+      {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% endblock %}
+      {% block extra_meta %}
+      {% endblock %}
+      {% block corecss %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+      {% endblock %}
+      {% block extra_css %}
+      {% endblock %}
+      {% block corejs %}
+      <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <!-- Stripe payment-->
+      <script src="https://js.stripe.com/v3/"></script>
+      <script src="https://cdn.jsdelivr.net/npm/kursor@0.0.14/dist/kursor.js"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+      {% endblock %}
+      {% block extra_js %}
+      {% endblock %}
+   </head>
+   <!--NAVBAR and LOGO, Navbar toggles in mobile view for ease of navigation on smaller screen size-->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="#">lifestyle.redesigned</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <div class="dropdown">
+               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Shop
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'test' %}">All Services</a>
+                  <a class="dropdown-item" href="{% url 'stylists' %}">Stylists</a>
+                  <a class="dropdown-item" href="#">Personal Trainers</a>
+                  <a class="dropdown-item" href="#">Professional Photographers</a>
+               </div>
+            </div>
+         </ul>
+         <span class="navbar-text">
+            <form class="form-inline">
+               <a class="nav-link" href="{% url 'account_signup' %}">Register </a>
+               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+               <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-search"></i>
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'test' %}">Search</a>
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+               </div>
+               <i class="fas fa-shopping-bag"></i>
+            </form>
+         </span>
+      </div>
+   </nav>
+   <!-- Modal -->
+   <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
+            </div>
+            <div class="modal-body">
+               <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+               </p>
+            </div>
+         </div>
+         <!-- modal-content -->
+      </div>
+      <!-- modal-dialog -->
+   </div>
+   <!-- modal -->
+   {% block content %}
+   {% endblock %}
+   {% block postloadjs %}
+   {% endblock %}
+   </body>
 </html>
