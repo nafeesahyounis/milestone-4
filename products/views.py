@@ -182,7 +182,7 @@ def listing(request, product_id):
             'product': product,
             'currentCategory': currentCategory,
             'result': result
-        }
+                }
     return render(request, 'products/listing.html', context)
 
 
