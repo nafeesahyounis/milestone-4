@@ -2,11 +2,15 @@ a {
     font-family: 'Playfair Display', serif;
     color:#2A2323;
 
-
 }
 
 nav{
     background-color: #ae877e;
+}
+
+button{
+    font-family: 'Playfair Display', serif;
+
 }
 
 h5{
