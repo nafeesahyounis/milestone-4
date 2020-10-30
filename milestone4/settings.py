@@ -208,7 +208,7 @@ if 'USE_AWS' in os.environ:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-    #
+    
 
 
 print(f"MEDIA_URL: {MEDIA_URL},\ndatabase url: {DATABASE_URL} and DATABASES {DATABASES}")
