@@ -1,7 +1,6 @@
 a {
     font-family: 'Playfair Display', serif;
     color:#2A2323;
-
 }
 
 nav{
@@ -10,7 +9,6 @@ nav{
 
 button{
     font-family: 'Playfair Display', serif;
-
 }
 
 h5{
@@ -20,27 +18,21 @@ h5{
 
 h1{
     font-family: 'Playfair Display', serif;
-
 }
 h4{
     font-family: 'Merriweather', serif;
-
 }
 
 .interior-design-landing{
     color:#2A2323;
 }
-
 .stylists-landing{
-   background-color:#006B7D;
-   
-   
+   background-color:#006B7D;    
 }
 
 .about{
     margin-top:8%;
     text-align:center;
-
 }
 
 hr{
@@ -60,16 +52,13 @@ hr{
 .listing-description{
     font-size:1.5em;
     font-family: 'Merriweather', serif;
-    color:#b4764f
-
+    color:#b4764f;
 
 }
 
 .description-text{
     font-size:1em;
     font-family: 'Playfair Display', serif;
-
-
 }
 
 /* loading overlay css taken from boutique ado project codeinstitute.com */
@@ -96,7 +85,6 @@ hr{
 .signup-page{
     margin-top:20%;
     font-family: 'Merriweather', serif;
-
 }
 
 .checkout-page{

@@ -23,7 +23,7 @@
 <form action="{% url 'add_to_cart' product.id %}" method="POST">
 {% csrf_token %}
 
- <button type="button submit" class="btn btn-info">Add To Cart</button>
+ <button id="add-to-cart" type="button submit" class="btn btn-info">Add To Cart</button>
 </form>
 </div>
 </div>
