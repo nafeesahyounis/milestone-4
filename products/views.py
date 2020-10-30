@@ -124,15 +124,55 @@ def stylists(request):
 def interiordesigners(request):
 
     products = Product.objects.filter(category='1')
-    
-    currentCategory = 'interiordesigners'
 
-    context = {
-        'products': products,
-        'currentCategory': currentCategory,
-        }
+    if request.method == "POST":
+        query = request.POST['sort']
+        print('this is being printed', query)
+        currentCategory = 'interiordesigners'
+        context = {
+                'products': products,
+            }
+        if query == '1':
+            products = products.order_by('price')
+            print('result ascending', products)
+            lowToHigh = "Products are now listed from highest to lowest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': lowToHigh
+            }
+            print("1")
+            return render(request, 'products/test.html', context)
+        if query == '2':
+            products = products.order_by('price').reverse()
+            print('result descending', products)
+            highToLow = "Products are now listed from lowest to highest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': highToLow
+
+            }
+            return render(request, 'products/test.html', context)
+        if query == '3':
+            products = products.order_by('rating').reverse()
+            print('rating', products)
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+
+            }
+            return render(request, 'products/test.html', context)
+    
+    else:
+        currentCategory = 'interiordesigners'
+
+        context = {
+            'products': products,
+            'currentCategory': currentCategory,
+            }
         
-    return render(request, 'products/test.html', context)
+        return render(request, 'products/test.html', context)
  
     
 def personaltrainers(request):

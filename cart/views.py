@@ -27,7 +27,7 @@ def add_to_cart(request, product_id):
         return listing(request, product_id)
 
     else:
-        return render(request, 'cart/cart.html', context)
+        return render(request, 'cart/cart.html')
 
 
 

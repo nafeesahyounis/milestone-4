@@ -47,6 +47,20 @@ hr{
   h1{
       font-size:1.2em;
   }
+
+  .listing{
+      margin-top:20%;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    .listing{
+        margin-top:20%;
+    }
 }
 
 .listing-description{
@@ -89,4 +103,9 @@ hr{
 
 .checkout-page{
     margin-top:20%;
+}
+
+.listing{
+        margin-top:15%;
+
 }

@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
 
-<div class="col-12" style="margin-top:70px;">
 <!-- top menu-->
-<div class="container" style="margin-top:70px;">
+<div class="container listing">
+<div class="row">
+<div class="col-12">
    <p> <a href="{% url 'home' %}">Home </a> > <a href="{% url 'categories' %}">Categories </a> > <a href="{% url result %}">{{currentCategory}}</a></p>
 </div>
+</div>
+
 
 <div class="row">
 <div class="col-sm-12 col-lg-6">
@@ -35,4 +39,7 @@
 </div>
 </div>
 </div>
+
 {% endblock %}
+
+<script src="{% static 'products/js/listing.js' %}"></script>
