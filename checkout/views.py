@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect,reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
@@ -9,7 +10,7 @@ import stripe
 # Create your views here.
 #create a form with the order for users who are not logged in (add login functionality later)
 
-
+@ login_required
 def checkouttest(request):
     """A view to return the checkouttest page"""
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
