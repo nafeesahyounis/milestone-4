@@ -36,3 +36,12 @@ The User Has the option to purchase either a pre-made package or individual serv
 5. [Deployment](#deployment)
 6. [Testing](#testing)
 7. [Credits](#credits)
+
+# UX
+
+## Goals
+
+### Visitor Goals
+
+The target audience for lifestyle redesigned is adults looking for a one-stop ecommerce site where they can have their lifestyle service related needs met. Lifestyle redesigned acts as a connecting point for consumers and professionals in one of the main categories. Consumers can use the site to book their consultations and access a database of a variety of different professionals to choose from.
+
