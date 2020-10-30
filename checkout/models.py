@@ -6,7 +6,7 @@ from django.conf import settings
 
 
 class Order(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -20,18 +20,10 @@ class Order(models.Model):
     class Meta:
         ordering = ('-created',)
     
-    def _generate_order_number(self):
-        """
-        Generate a random, unique order number using UUID
-        """
-        return uuid.uuid4().hex.upper()
-    
-    def __str__(self):
-        return self.order_number
-    
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
+    
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order,
