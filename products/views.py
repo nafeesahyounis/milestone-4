@@ -124,7 +124,7 @@ def stylists(request):
 def interiordesigners(request):
 
     products = Product.objects.filter(category='1')
-
+    
     currentCategory = 'interiordesigners'
 
     context = {
