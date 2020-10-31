@@ -2,20 +2,15 @@
 {% load static %}
 {% block content %}
 <div class="container checkout-success">
-
-<div class="row">
-<div class="col-12">
-<div class="progress">
-  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Complete</div>
+   <div class="row">
+      <div class="col-12">
+         <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Complete</div>
+         </div>
+         <h1 class="success"> Checkout Success </h1>
+         <p> Your order has been successfully processed. </p>
+         <p><a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Shop </a> </p>
+      </div>
+   </div>
 </div>
-<h1 class="success"> Checkout Success </h1>
-
-<p> Your order has been successfully processed. </p>
-<p><a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Shop </a> </p>
-
-
-</div>
-</div>
-</div>
-
-  {% endblock %}
+{% endblock %}
