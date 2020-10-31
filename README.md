@@ -160,3 +160,33 @@ A lot of white space was used in this particular project to create a clean feel.
 Wireframing was done using the Figma tool. As the product is an MVP and there were 4 weeks to both learn django and complete the project, basic wireframing was done aimed at this goal:
 
 [wireframes](https://www.figma.com/file/Xkc2s9HvJ3Mo6EZavRIGYc/eCommerce-%2F-Nafeesah?node-id=0%3A1)
+
+# Features
+## Existing Features
+
+* Navbar
+
+The navbar is on each page and on smaller screens it turns into a hamburger menu on the left hand corner of the screen.
+
+The following items are present on the navbar when the user is not logged in:
+
+- Home
+
+- Shop (dropdown menu)
+
+- Login
+
+- Register
+
+- Shopping cart in left corner
+
+When the user is logged in, the following items are visible:
+
+- Home
+
+- Shop (dropdown)
+
+- Logout
+
+- Shopping cart in left corner
+
