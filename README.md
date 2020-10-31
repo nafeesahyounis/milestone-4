@@ -4,6 +4,10 @@ Lifestyle Redesigned has been designed by developer Nafeesah Younis as a final p
 
 It is an Ecommerce Site that takes inspiration from the TV show 'Queer Eye', and essentially it offers the user the option to buy both packages and individual services geared at revamping their overall image, whether it be for the purpose of dating or a job.
 
+*Important Note*
+
+Due to time constraints, this ecommerce site was developed as an MVP and therefore is lacking in many features as will be discussed further in the docs.
+
 The User Has the option to purchase either a pre-made package or individual services. 
 
 - Life coaches - mind & motivation
@@ -142,3 +146,17 @@ Lifestyle redesigned has a very minimal and functional design. It was built on a
 ### Fonts
 
 The main headers of the site use Merriweather & the secondary font is Playfair. These fonts were chosen after doing some research on the most popular web design fonts of the year [awards](https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html).
+
+### Colors
+
+A lot of white space was used in this particular project to create a clean feel. It was modelled off of research on other ecommerce sites, where color is often minimal and focus is on products. #ae877e was used for the navbar to create some warmth to the overall monochromatic feel of the site.
+
+
+
+
+
+## Wireframes
+
+Wireframing was done using the Figma tool. As the product is an MVP and there were 4 weeks to both learn django and complete the project, basic wireframing was done aimed at this goal:
+
+[wireframes](https://www.figma.com/file/Xkc2s9HvJ3Mo6EZavRIGYc/eCommerce-%2F-Nafeesah?node-id=0%3A1)
