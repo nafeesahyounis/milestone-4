@@ -401,5 +401,15 @@ product | / | ForeignKey
 quantity | / | PositiveIntegerField
 total_cost | / | DecimalField
 
+# Technologies Used
+
+# Testing 
+
+Testing information can be found in separate [TESTING.md](TESTING.md) file
+
+
+# Deployment
+
+# Credits
 
 
