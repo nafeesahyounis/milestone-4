@@ -5,7 +5,6 @@ from .models import Product, Category
 
 
 def products(request):
-    categories = Category.objects.all()
 
     if request.method == "POST":
 

@@ -19,7 +19,6 @@ from . import views
 from .webhooks import webhook
 
 
-
 urlpatterns = [
     path('checkouttest', views.checkouttest, name='checkouttest'),
     path('create_order', views.create_order, name='create_order'),
