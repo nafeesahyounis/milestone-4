@@ -377,6 +377,19 @@ Rating |  max_digits = 6 | DecimalField
 name| max_length=254 | Charfield
 friendly_name | max_length=254 | CharField
 
+* Order Model
+
+| Name |  | length | Field Type |
+--- | --- | --- | ---
+first_name | max_length=254 | CharField
+last_name | max_length=254 | CharField
+email | /| emailField
+address | max_length = 250 | CharField
+postal_code | max_digits= 20| Charfield
+city | max_digits= 100| Charfield
+created | /| DateTimeField
+updated | /| DateTimeField
+paid | /| BooleanField
 
 
 
