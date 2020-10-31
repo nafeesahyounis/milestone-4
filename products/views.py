@@ -171,7 +171,7 @@ def interiordesigners(request):
     
 def personaltrainers(request):
     
-    products = Product.objects.filter(category='5')
+    products = Product.objects.filter(category='3')
     if request.method == "POST":
         query = request.POST['sort']
         print('this is being printed', query)
@@ -225,27 +225,66 @@ def personaltrainers(request):
 
 def professionalphotos(request):
     
-    products = Product.objects.filter(category='4')
-    context = {
-            'products': products,
-        }
-    return render(request, 'products/products.html', context)
+    products = Product.objects.filter(category='5')
+    if request.method == "POST":
+        query = request.POST['sort']
+        print('this is being printed', query)
+        currentCategory = 'professionalphotos'
+        context = {
+                'products': products,
+            }
+        if query == '1':
+            products = products.order_by('price')
+            print('result ascending', products)
+            lowToHigh = "Products are now listed from highest to lowest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': lowToHigh
+            }
+            print("1")
+            return render(request, 'products/products.html', context)
+        if query == '2':
+            products = products.order_by('price').reverse()
+            print('result descending', products)
+            highToLow = "Products are now listed from lowest to highest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': highToLow
 
+            }
+            return render(request, 'products/products.html', context)
+        if query == '3':
+            products = products.order_by('rating').reverse()
+            print('rating', products)
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+
+            }
+            return render(request, 'products/products.html', context)
+    
+    else:
+        currentCategory = 'professionalphotos'
+
+        context = {
+            'products': products,
+            'currentCategory': currentCategory,
+            }
+        
+        return render(request, 'products/products.html', context)
+ 
+    
 def lifecoaches(request):
     
-    products = Product.objects.filter(category='3'),
+    products = Product.objects.filter(category='4'),
     context = {
             'products': products,
         }
     return render(request, 'products/products.html', context)
 
-def other(request):
-    
-    products = Product.objects.filter(category='6')
-    context = {
-            'products': products,
-        }
-    return render(request, 'products/products.html', context)
+
 
 
 def listing(request, product_id):

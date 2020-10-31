@@ -25,7 +25,6 @@ urlpatterns = [
     path('products/lifecoaches', views.lifecoaches, name='lifecoaches'),
     path('products/professionalphotos', views.professionalphotos, name='professionalphotos'),
     path('products/personaltrainers', views.personaltrainers, name='personaltrainers'),
-    path('products/other', views.other, name='other'),
     path('products/<product_id>', views.listing, name='listing'),
     path('categories', views.categories, name='categories')
 ]
