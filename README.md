@@ -345,3 +345,15 @@ In future, I would like to have a separate system for business users where they 
 
 This will make the platform better for advertising.
 
+* Javascript form authentication
+
+I would like to add more modals and form authentication and feedback on the frontend using javascript as this would provide better ux.
+
+## Information Architecture
+
+### Database Choice
+
+The Django framework works with SQL database. In development, I used the inbuilt sqlite and then in production and for deployment I used postgres as that's built into heroku.
+
+#### Database Choice
+
