@@ -2,9 +2,12 @@
 {% load static %}
 {% block content %}
 <div class="container checkout">
+<div class="progress row">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"> Billing</div>
+</div>
    <div class="row">
       <div class="col-12">
-         <h1> Checkout </h1>
+         <h1 class="checkout-title"> Checkout </h1>
          {% for items in cart_items %}
          {{ items.product }}
          {{items.price}}
@@ -28,7 +31,10 @@
                <div id="card-errors" role="alert"></div>
             </div>
             <button id="submit-button" class="btn btn-black rounded-0">
-            <span class="font-weight-bold">Complete Order</span>
+            <a  id="submit-button" type="button" class="font-weight-bold btn-info btn">Complete Order</a>
+            <a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Shop </a>
+                        <a href="{% url 'cart' %}" type="button" class="btn btn-info"> Return to Cart </a>
+
             <span class="icon">
             <i class="fas fa-lock"></i>
             </span>
