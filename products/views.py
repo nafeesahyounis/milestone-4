@@ -38,7 +38,7 @@ def products(request):
 
         if query == '3':
             products = products.order_by('rating').reverse()
-            print('rating',products)
+            print('rating', products)
             context = {
                 'products': products,
                 'currentCategory': currentCategory,
@@ -55,8 +55,9 @@ def products(request):
             'products': products,
             'currentCategory': currentCategory,
         }
-        
-        return render(request, 'products/products.html', context)   
+
+        return render(request, 'products/products.html', context)
+
 
 def stylists(request):
     products = Product.objects.filter(category='2')
@@ -99,19 +100,18 @@ def stylists(request):
 
             }
             return render(request, 'products/products.html', context)
-        
 
 
     else:
         """A view to return the test page"""
         products = Product.objects.filter(category='2')
-        currentCategory ='stylists'
+        currentCategory = 'stylists'
 
         context = {
          'products': products,
          'currentCategory': currentCategory,
         }
-        
+
         return render(request, 'products/products.html', context)
 
 
@@ -157,7 +157,7 @@ def interiordesigners(request):
 
             }
             return render(request, 'products/products.html', context)
-    
+
     else:
         currentCategory = 'interiordesigners'
 
@@ -165,12 +165,12 @@ def interiordesigners(request):
             'products': products,
             'currentCategory': currentCategory,
             }
-        
+
         return render(request, 'products/products.html', context)
- 
-    
+
+
 def personaltrainers(request):
-    
+
     products = Product.objects.filter(category='3')
     if request.method == "POST":
         query = request.POST['sort']
@@ -210,7 +210,6 @@ def personaltrainers(request):
 
             }
             return render(request, 'products/products.html', context)
-    
     else:
         currentCategory = 'personaltrainers'
 
@@ -218,13 +217,11 @@ def personaltrainers(request):
             'products': products,
             'currentCategory': currentCategory,
             }
-        
         return render(request, 'products/products.html', context)
- 
-   
+
 
 def professionalphotos(request):
-    
+
     products = Product.objects.filter(category='5')
     if request.method == "POST":
         query = request.POST['sort']
@@ -264,7 +261,7 @@ def professionalphotos(request):
 
             }
             return render(request, 'products/products.html', context)
-    
+
     else:
         currentCategory = 'professionalphotos'
 
@@ -272,12 +269,12 @@ def professionalphotos(request):
             'products': products,
             'currentCategory': currentCategory,
             }
-        
+
         return render(request, 'products/products.html', context)
  
-    
+
 def lifecoaches(request):
-    
+
     products = Product.objects.filter(category='4'),
     if request.method == "POST":
         query = request.POST['sort']
@@ -317,22 +314,18 @@ def lifecoaches(request):
 
             }
             return render(request, 'products/products.html', context)
-        
-
 
     else:
         """A view to return the test page"""
         products = Product.objects.filter(category='4')
-        currentCategory ='lifecoaches'
+        currentCategory = 'lifecoaches'
 
         context = {
          'products': products,
          'currentCategory': currentCategory,
         }
-        
+
         return render(request, 'products/products.html', context)
-
-
 
 
 def listing(request, product_id):
@@ -353,6 +346,3 @@ def listing(request, product_id):
 def categories(request):
     return render(request, 'products/categories.html')
 
-
-#post name of category
-#
