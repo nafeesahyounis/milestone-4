@@ -275,6 +275,73 @@ The logout page is from the allauth template. It has two buttons, one that allow
 
 ### Cart Page
 
+* Table of products
+
+On the cart page, there is a list of products that have been added with prices in the form of a table.
+
+* Buttons
+
+There is a return to products page for better navigation
+
 ### Checkout Page
 
+* Progress Indicator
+
+There is a progress indicator to give the user feedback on how much of the checkout process they have left.
+
+* Form
+
+The Order form takes the details of the user and stores them in the database.
+
+* Card payment
+
+There is a stripe payment system and a card payment field. 
+
 ### Checkout Success Page
+
+* Progress Indicator
+
+There is a progress indicator to give the user feedback that they have completed their order.
+
+* Buttons
+
+There are some buttons that lead the user back to the shop for better ux.
+
+## Features left to Implement
+
+There are a lot of features I would have liked to implement in this project. However, the time was very tight and it was important to keep it minimal and purposeful.
+
+* Images 
+
+Unfortunately there was a last minute issue with the images that would have delayed submission, and so they were not added to the database.
+
+* Total cost calculator
+
+At the moment, user can only add and pay for one item. I would like to modify this so that they can pay for everything at once.
+
+* Remove product from cart
+
+Due to time constraints, it was not possible to create a button to remove items from cart which significantly impacts the ux of the site.
+
+* Search Bar 
+
+In future, I would like to add a search bar at the top to filter for services.
+
+* User Profile
+
+It would be good to have a place to store user orders and also allow users to review their products. 
+
+* Wishlist
+
+I would like to add a feature where the user can favourite the items they like in order to buy them later if they are logged in.
+
+* Blog app
+
+In future I would like to add an additional app where businesses can have blog posts to further advertise their services.
+
+* Business features
+
+In future, I would like to have a separate system for business users where they can go in and modify their listings and their listing details and then submit them to be later reviewed by the main site admin. 
+
+This will make the platform better for advertising.
+
