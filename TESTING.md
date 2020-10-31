@@ -65,9 +65,44 @@ Djangos builtin allauth system provides security, but in future I would like to 
 
 ### Business Stories Testing
 
+- As a business owner, I would like visitors to be able to see my listing ASAP so that I can quickly generate traffic.
+
+There are very few pages on the site, so the user immediately can see the different listings and services.
+
+- As a business owner, I would like to be able to contact the creator of the site easily in case I encounter any problems. 
+
+Email address at bottom of page allows for immediate contact.
+
+- As a business owner, I would like an easy to use interface that I can navigate within a few clicks.
+
+The site is very functional and so a person is able to find what they need with minimum effort. 
+
+- As a business owner, I would like the platform that I advertise on to be aesthetically pleasing and inspire my potential customers to use my services.
+
+Unfortunately this need was not entirely met. Styling was minimal due to time constraints.
 
 
+## Manual Testing
 
+Manual testing was done throughout the project using print statements and pages were checked whenever something new was added. 
+
+Features on all pages were tested by myself and other friends.
+
+## Defensive Design (known issue)
+
+Unfortunately as this is an MVP, it was not possible to implement defensive design and fully test every page in terms of potential errors eg user type additional thing into url. Page not found was not created and activity that does not conform to the general flow of the page was not addressed ie if the user does not necessarily follow the if statements. In future, I would like to make the site more rigid.
+
+However, it is currently built in a way that it addresses the basic flow in the wireframe in the README file without a massive focus on potential error. The site was built in the space of a month while the developer was still learning django, therefore most time was spent learning the material whilst building and so many areas were not addressed.
+
+## Known issues
+
+* Footer does not stick to the bottom of the page.
+
+* Media queries in css do not work on smaller screen size.
+
+* Due to a change in the pathnames during deployment, I was unable to connect the heroku app with the media files and so images cannot be displayed. As a quick fix, I have manually uploaded them but in future I will fix this.
+
+* Images also cannot be displayed in database. I tried to implement this feature in the models but ran into many errors and therefore chose to do it later due to time constraint issues.
 
 
 
