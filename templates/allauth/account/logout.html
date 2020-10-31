@@ -17,6 +17,8 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
   <button type="submit button" class="btn btn-info">{% trans 'Sign Out' %}</button>
+  <p> No? Then stay logged in and:</p> <a href="{% url 'home' %}" type="button" class="btn btn-success">Return to home</a>
+
 </form>
 </div>
 </div>
