@@ -51,4 +51,8 @@ The user goals are:
 
 - To be able to easily purchase their first consultation without having to search through lots of different websites.
 
+- To contribute to a growing lifestyle service industry.
+
+Life style redesigned is a great way to address these needs because:
+
 
