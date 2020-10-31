@@ -39,7 +39,11 @@
    <div class="container">
             <p> All Products </p>
                   <div class="row">
-
+                  <div class="col-12">
+                  <p> There are {{products|length}} results that match your query.</p>
+                    </div>
+                    </div>
+                      <div class="row">
 
             {% for product in products %}
             
