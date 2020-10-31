@@ -45,3 +45,10 @@ The User Has the option to purchase either a pre-made package or individual serv
 
 The target audience for lifestyle redesigned is adults looking for a one-stop ecommerce site where they can have their lifestyle service related needs met. Lifestyle redesigned acts as a connecting point for consumers and professionals in one of the main categories. Consumers can use the site to book their consultations and access a database of a variety of different professionals to choose from.
 
+The user goals are:
+
+- To have a database where they can quickly and easily find professionals in one of the four service fields: home design, personal styling, fitness & life coaching.
+
+- To be able to easily purchase their first consultation without having to search through lots of different websites.
+
+
