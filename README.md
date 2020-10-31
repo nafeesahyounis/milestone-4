@@ -229,3 +229,41 @@ There is a breadcrumb menu at the top of the page that the user can click to eit
 * Products list
 
 Products are displayed with name and description as well as price and rating. Note: unfortunately due to time constraints and some last minute issues, images were not successfully loaded. See testing.md for further details.
+
+### Listing Detail Page
+
+* Product details
+
+The listing detail page has a product description & name and price of the product. Unfortunately images were not successfully added (see testing.md).
+
+* Buttons
+
+There is an add to cart and a view cart button on the listing page. 
+
+* Breadcrumb menu
+
+For ease of navigation, there is a breadcrumb menu at the top of the page so that user can navigate back to categories.
+
+### Category pages
+
+* Breadcrumb menu
+
+For ease of navigation, there is a breadcrumb menu at the top of the page so that user can navigate back to home.
+
+* Names of categories
+
+Categories are listed for user to go to whichever service they want.
+
+
+
+### Register Page
+
+### Login Page
+
+### Logout Page
+
+### Cart Page
+
+### Checkout Page
+
+### Checkout Success Page
