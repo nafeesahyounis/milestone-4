@@ -279,10 +279,58 @@ def professionalphotos(request):
 def lifecoaches(request):
     
     products = Product.objects.filter(category='4'),
-    context = {
-            'products': products,
+    if request.method == "POST":
+        query = request.POST['sort']
+        print('this is being printed', query)
+        currentCategory = 'lifecoaches'
+        context = {
+                'products': products,
+            }
+        if query == '1':
+            products = products.order_by('price')
+            print('result ascending', products)
+            lowToHigh = "Products are now listed from highest to lowest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': lowToHigh
+            }
+            print("1")
+            return render(request, 'products/products.html', context)
+        if query == '2':
+            products = products.order_by('price').reverse()
+            print('result descending', products)
+            highToLow = "Products are now listed from lowest to highest price"
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+                'filter': highToLow
+
+            }
+            return render(request, 'products/products.html', context)
+        if query == '3':
+            products = products.order_by('rating').reverse()
+            print('rating', products)
+            context = {
+                'products': products,
+                'currentCategory': currentCategory,
+
+            }
+            return render(request, 'products/products.html', context)
+        
+
+
+    else:
+        """A view to return the test page"""
+        products = Product.objects.filter(category='4')
+        currentCategory ='lifecoaches'
+
+        context = {
+         'products': products,
+         'currentCategory': currentCategory,
         }
-    return render(request, 'products/products.html', context)
+        
+        return render(request, 'products/products.html', context)
 
 
 

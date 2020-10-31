@@ -51,9 +51,11 @@
                   <a class="dropdown-item" href="{% url 'products' %}">All Services</a>
                   <a class="dropdown-item" href="{% url 'stylists' %}">Stylists</a>
                 <a class="dropdown-item" href="{% url 'interiordesigners' %}">Interior Designers</a>
+                                <a class="dropdown-item" href="{% url 'lifecoaches' %}">Life coaches</a>
+
 
                   <a class="dropdown-item" href="{% url 'personaltrainers' %}">Personal Trainers</a>
-                  <a class="dropdown-item" href="#">Professional Photographers</a>
+                  <a class="dropdown-item" href="{% url 'professionalphotos' %}">Professional Photographers</a>
                </div>
             </div>
             {% if request.user.is_authenticated %}
