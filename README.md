@@ -391,5 +391,15 @@ created | /| DateTimeField
 updated | /| DateTimeField
 paid | /| BooleanField
 
+* OrderItem Model
+
+| Name |  | length | Field Type |
+--- | --- | --- | ---
+
+order | / | ForeignKey
+product | / | ForeignKey
+quantity | / | PositiveIntegerField
+total_cost | / | DecimalField
+
 
 
