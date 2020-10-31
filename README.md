@@ -254,13 +254,24 @@ For ease of navigation, there is a breadcrumb menu at the top of the page so tha
 
 Categories are listed for user to go to whichever service they want.
 
-
-
 ### Register Page
+
+This template is from djangos inbuilt allauth.
+
+* Form 
+
+There is a registration form on this page which adds the users info into the database.
+
 
 ### Login Page
 
+There are form fields on this page that check user email and password. This template is from djangos inbuilt allauth.
+
 ### Logout Page
+
+* Buttons
+
+The logout page is from the allauth template. It has two buttons, one that allows the user to logout and one that directs back to the homepage.
 
 ### Cart Page
 
