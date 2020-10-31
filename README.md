@@ -95,9 +95,32 @@ Lifestyle Redesigned currently caters towards this in the following ways:
 
 - Although this is a student project, in the future I would like to expand on the functionality so that there is a separate login system and set of features for businesses to go in and perform CRUD applications so that it can be used as an advertising platform.
 
+## User Stories
 
+### Visitor Stories
 
+As someone who is visiting Lifestyle Redesigned, I want to:
 
+- Immediately know what the site is for and what are the different features/things I can do on the site.
 
+- Enjoy navigating the site. Be able to navigate it with ease and not feel frustrated by inconsistencies or a lack of buttons.
+
+- Have something beautiful yet not overwhelming to look at, in order to inspire me to purchase services.
+
+- Be able to search for what I need immediately, without too much navigation and without having to read through too much information.
+
+- As someone who has a busy life and may not have a larger device or may be on the go, I want to be able to search for things easily on my phone or tablet.
+
+- As someone with either a lower budget or a lot of money to invest, I want to be able to sort through services based on what price point best suits me.
+
+- As a user of the site, I would like to be able to contact the creator of the site easily and quickly if I encounter any issues.
+
+- As a user of the site, I would like to be able to pay for my purchases through a secure payment system.
+
+- As a user of the site, I would like to be able to login and logout of the site so that my purchases are securely tracked somewhere.
+
+- As a user of the site, when I put something into the cart I'd like the option to remove it or look at it before committing to purchasing.
+
+### Business Stories
 
 
