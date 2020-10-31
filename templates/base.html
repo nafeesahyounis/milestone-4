@@ -46,9 +46,11 @@
                Shop
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{% url 'test' %}">All Services</a>
+                  <a class="dropdown-item" href="{% url 'products' %}">All Services</a>
                   <a class="dropdown-item" href="{% url 'stylists' %}">Stylists</a>
-                  <a class="dropdown-item" href="#">Personal Trainers</a>
+                <a class="dropdown-item" href="{% url 'interiordesigners' %}">Interior Designers</a>
+
+                  <a class="dropdown-item" href="{% url 'personaltrainers' %}"Personal Trainers</a>
                   <a class="dropdown-item" href="#">Professional Photographers</a>
                </div>
             </div>
@@ -75,17 +77,6 @@
          </ul>
          <span class="navbar-text">
             <form class="form-inline">
-
-                      
-                            
-               <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fas fa-search"></i>
-               </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{% url 'test' %}">Search</a>
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-               </div>
                <i class="fas fa-shopping-bag"></i>
             </form>
          </span>

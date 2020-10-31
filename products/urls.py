@@ -19,13 +19,13 @@ from . import views
 
 
 urlpatterns = [
-    path('test/', views.test, name='test'),
-    path('test/stylists', views.stylists, name='stylists'),
-    path('test/interiordesigners', views.interiordesigners, name='interiordesigners'),
-    path('test/lifecoaches', views.lifecoaches, name='lifecoaches'),
-    path('test/professionalphotos', views.professionalphotos, name='professionalphotos'),
-    path('test/personaltrainers', views.personaltrainers, name='personaltrainers'),
-    path('test/other', views.other, name='other'),
+    path('products/products', views.products, name='products'),
+    path('products/stylists', views.stylists, name='stylists'),
+    path('products/interiordesigners', views.interiordesigners, name='interiordesigners'),
+    path('products/lifecoaches', views.lifecoaches, name='lifecoaches'),
+    path('products/professionalphotos', views.professionalphotos, name='professionalphotos'),
+    path('products/personaltrainers', views.personaltrainers, name='personaltrainers'),
+    path('products/other', views.other, name='other'),
     path('products/<product_id>', views.listing, name='listing'),
     path('categories', views.categories, name='categories')
 ]

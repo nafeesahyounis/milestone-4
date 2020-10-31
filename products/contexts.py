@@ -16,7 +16,7 @@ def sort(request, id, currentCategory):
             'products': products,
             'currentCategory': currentCategory,
         }
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)
     if query == '2':
         products = products.order_by('price').reverse()
         print('result descending', products)
@@ -25,7 +25,7 @@ def sort(request, id, currentCategory):
             'currentCategory': currentCategory,
 
             }
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)
     if query == '3':
         products = products.order_by('rating').reverse()
         print('rating', products)
@@ -34,4 +34,4 @@ def sort(request, id, currentCategory):
             'currentCategory': currentCategory,
 
         }
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)

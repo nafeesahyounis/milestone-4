@@ -4,20 +4,14 @@ from products.contexts import sort
 
 # Create your views here.
 
-def test(request):
+def products(request):
     categories = Category.objects.all()
     print(categories)
 
     if request.method == "POST":
-
-        # filter = (request.POST)
-        #if request.POST['sort']
-        #query = request.POST['category']
-        #print('this is being printed', query)
-        #products = Product.objects.filter(category=query)
-        #print(products)
+        
         query = request.POST['sort']
-        currentCategory = 'test'
+        currentCategory = 'products'
         products = Product.objects.all()
         context = {
                 'products': products,
@@ -40,7 +34,7 @@ def test(request):
 
             }
             print("2")
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
 
         if query == '3':
             products = products.order_by('rating').reverse()
@@ -51,18 +45,18 @@ def test(request):
 
             }
             print("3")
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
     else:
         """A view to return the test page"""
         products = Product.objects.all()
-        currentCategory = 'test'
+        currentCategory = 'products'
 
         context = {
             'products': products,
             'currentCategory': currentCategory,
         }
         
-        return render(request, 'products/test.html', context)   
+        return render(request, 'products/products.html', context)   
 
 def stylists(request):
     products = Product.objects.filter(category='2')
@@ -84,7 +78,7 @@ def stylists(request):
                 'filter': lowToHigh
             }
             print("1")
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
             print('result descending', products)
@@ -95,7 +89,7 @@ def stylists(request):
                 'filter': highToLow
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '3':
             products = products.order_by('rating').reverse()
             print('rating', products)
@@ -104,7 +98,7 @@ def stylists(request):
                 'currentCategory': currentCategory,
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         
 
 
@@ -118,7 +112,7 @@ def stylists(request):
          'currentCategory': currentCategory,
         }
         
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)
 
 
 def interiordesigners(request):
@@ -142,7 +136,7 @@ def interiordesigners(request):
                 'filter': lowToHigh
             }
             print("1")
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
             print('result descending', products)
@@ -153,7 +147,7 @@ def interiordesigners(request):
                 'filter': highToLow
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '3':
             products = products.order_by('rating').reverse()
             print('rating', products)
@@ -162,7 +156,7 @@ def interiordesigners(request):
                 'currentCategory': currentCategory,
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
     
     else:
         currentCategory = 'interiordesigners'
@@ -172,7 +166,7 @@ def interiordesigners(request):
             'currentCategory': currentCategory,
             }
         
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)
  
     
 def personaltrainers(request):
@@ -195,7 +189,7 @@ def personaltrainers(request):
                 'filter': lowToHigh
             }
             print("1")
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '2':
             products = products.order_by('price').reverse()
             print('result descending', products)
@@ -206,7 +200,7 @@ def personaltrainers(request):
                 'filter': highToLow
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
         if query == '3':
             products = products.order_by('rating').reverse()
             print('rating', products)
@@ -215,7 +209,7 @@ def personaltrainers(request):
                 'currentCategory': currentCategory,
 
             }
-            return render(request, 'products/test.html', context)
+            return render(request, 'products/products.html', context)
     
     else:
         currentCategory = 'personaltrainers'
@@ -225,7 +219,7 @@ def personaltrainers(request):
             'currentCategory': currentCategory,
             }
         
-        return render(request, 'products/test.html', context)
+        return render(request, 'products/products.html', context)
  
    
 
@@ -235,7 +229,7 @@ def professionalphotos(request):
     context = {
             'products': products,
         }
-    return render(request, 'products/test.html', context)
+    return render(request, 'products/products.html', context)
 
 def lifecoaches(request):
     
@@ -243,7 +237,7 @@ def lifecoaches(request):
     context = {
             'products': products,
         }
-    return render(request, 'products/test.html', context)
+    return render(request, 'products/products.html', context)
 
 def other(request):
     
@@ -251,7 +245,7 @@ def other(request):
     context = {
             'products': products,
         }
-    return render(request, 'products/test.html', context)
+    return render(request, 'products/products.html', context)
 
 
 def listing(request, product_id):
