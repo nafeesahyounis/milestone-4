@@ -3,6 +3,10 @@ a {
     color:#2A2323;
 }
 
+p{
+    font-family: 'Merriweather', serif;
+}
+
 nav{
     background-color: #ae877e;
 }
