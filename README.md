@@ -355,5 +355,19 @@ I would like to add more modals and form authentication and feedback on the fron
 
 The Django framework works with SQL database. In development, I used the inbuilt sqlite and then in production and for deployment I used postgres as that's built into heroku.
 
-#### Database Choice
+#### Models
+
+* Product Model
+
+| Name |  | length | Field Type |
+--- | --- | --- | ---
+Category| max_length=254 | ForeignKey
+Sku | max_length=254 | CharField
+Name | max_length = 254 | CharField
+Description | / | TextField
+Price | max_digits=6 | DecimalField
+Rating |  max_digits = 6 | DecimalField
+
+
+
 
