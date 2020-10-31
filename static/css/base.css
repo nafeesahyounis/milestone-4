@@ -116,3 +116,7 @@ hr{
 .log-out{
     margin-top:18%;
 }
+
+.form-row-checkout {
+    display: inherit;
+}
