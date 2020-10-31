@@ -121,6 +121,24 @@ As someone who is visiting Lifestyle Redesigned, I want to:
 
 - As a user of the site, when I put something into the cart I'd like the option to remove it or look at it before committing to purchasing.
 
+- As a user of the site, I would like my emails and passwords to be secure.
+
 ### Business Stories
 
+As a business owner:
 
+- As a business owner, I would like visitors to be able to see my listing ASAP so that I can quickly generate traffic.
+
+- As a business owner, I would like to be able to contact the creator of the site easily in case I encounter any problems. 
+
+- As a business owner, I would like an easy to use interface that I can navigate within a few clicks.
+
+- As a business owner, I would like the platform that I advertise on to be aesthetically pleasing and inspire my potential customers to use my services.
+
+## Design Choices
+
+Lifestyle redesigned has a very minimal and functional design. It was built on a time constraint, so the goal was functionality and pleasant user experience rather than anything too flamboyant.
+
+### Fonts
+
+The main headers of the site use Merriweather & the secondary font is Playfair. These fonts were chosen after doing some research on the most popular web design fonts of the year [awards](https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html)

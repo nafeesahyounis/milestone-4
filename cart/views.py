@@ -21,9 +21,7 @@ def add_to_cart(request, product_id):
         product = get_object_or_404(Product, pk=product_id)
         cart[product.id] = 1
         request.session['cart'] = cart
-
-        context = {'item': product}
-        print('it worked!')
+        
         return listing(request, product_id)
 
     else:
