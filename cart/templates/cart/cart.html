@@ -1,31 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container" style="margin-top:70px">
-<h1> Cart </h1>
-<div class="row table">
-  <table class="table">
-
-{% for items in cart_items %}
-    <tbody>
-
-   <td>{{ items.product }}</td>
-    <td>£{{ items.product.price }}</td>
-
-  {% endfor %}
-  
-</tbody>
-</table>
-<div class="container">
-  <div class="row">
-  <div class="col-12">
-  <a href="{% url 'checkouttest' %}" type="button" class="btn btn-info"> Checkout</a>
-    <a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Products </a>
-
-  </div>
-  </div>
-  </div>
+<div class="container products-page">
+   <h1> Cart </h1>
+   <div class="row table">
+      <table class="table">
+         {% for items in cart_items %}
+         <tbody>
+            <td>{{ items.product }}</td>
+            <td>£{{ items.product.price }}</td>
+            {% endfor %}
+         </tbody>
+      </table>
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <a href="{% url 'checkouttest' %}" type="button" class="btn btn-info"> Checkout</a>
+               <a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Products </a>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
-</div>
-
-  {% endblock %}
+{% endblock %}
