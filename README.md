@@ -359,6 +359,8 @@ The Django framework works with SQL database. In development, I used the inbuilt
 
 * Product Model
 
+- the Product model takes the foreign key of the category model.
+
 | Name |  | length | Field Type |
 --- | --- | --- | ---
 Category| max_length=254 | ForeignKey
@@ -367,6 +369,13 @@ Name | max_length = 254 | CharField
 Description | / | TextField
 Price | max_digits=6 | DecimalField
 Rating |  max_digits = 6 | DecimalField
+
+* Category Model
+
+| Name |  | length | Field Type |
+--- | --- | --- | ---
+name| max_length=254 | Charfield
+friendly_name | max_length=254 | CharField
 
 
 
