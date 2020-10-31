@@ -1,49 +1,50 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container" style="margin-top:70px"> <h1> Choose a Service </h1> </div>
+<div class="container" style="margin-top:70px">
+   <h1> Choose a Service </h1>
+</div>
 <div class="container" style="margin-top:70px;">
    <p> <a href="{% url 'home' %}">Home </a> > <a href="{% url 'categories' %}">Categories </a>  </p>
 </div>
 <div class="container">
-<div class="row">
-<div class="col-lg-3 col-sm-12">
-<div class="card">
-<div class="card-body">
-<h3> <a href="{% url 'stylists' %}">Stylists </a> </h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-12">
-<div class="card">
-<div class="card-body">
-<h3> <a href="{% url 'interiordesigners' %}">Interior Designers </h3></a>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-12">
-<div class="card">
-<div class="card-body">
-<h3> <a href="{% url 'personaltrainers' %}">Personal Trainers </a> </h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-12">
-<div class="card">
-<div class="card-body">
-<h3> <a href="{% url 'lifecoaches' %}">Lifecoaches </a> </h3>
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-sm-12">
-<div class="card">
-<div class="card-body">
-<h3> <a href="{% url 'professionalphotos' %}">Professional Photographers </a> </h3>
-</div>
-</div>
-</div>
-
-
-</div>
+   <div class="row">
+      <div class="col-lg-3 col-sm-12">
+         <div class="card">
+            <div class="card-body">
+               <h3> <a href="{% url 'stylists' %}">Stylists </a> </h3>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+         <div class="card">
+            <div class="card-body">
+               <h3> <a href="{% url 'interiordesigners' %}">Interior Designers </h3>
+               </a>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+         <div class="card">
+            <div class="card-body">
+               <h3> <a href="{% url 'personaltrainers' %}">Personal Trainers </a> </h3>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+         <div class="card">
+            <div class="card-body">
+               <h3> <a href="{% url 'lifecoaches' %}">Lifecoaches </a> </h3>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+         <div class="card">
+            <div class="card-body">
+               <h3> <a href="{% url 'professionalphotos' %}">Professional Photographers </a> </h3>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 {% endblock %}
