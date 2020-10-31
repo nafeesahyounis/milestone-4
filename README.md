@@ -141,4 +141,4 @@ Lifestyle redesigned has a very minimal and functional design. It was built on a
 
 ### Fonts
 
-The main headers of the site use Merriweather & the secondary font is Playfair. These fonts were chosen after doing some research on the most popular web design fonts of the year [awards](https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html)
+The main headers of the site use Merriweather & the secondary font is Playfair. These fonts were chosen after doing some research on the most popular web design fonts of the year [awards](https://www.awwwards.com/20-best-web-fonts-from-google-web-fonts-and-font-face.html).
