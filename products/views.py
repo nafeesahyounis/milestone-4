@@ -1,15 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
-from products.contexts import sort
 
 # Create your views here.
+
 
 def products(request):
     categories = Category.objects.all()
     print(categories)
 
     if request.method == "POST":
-        
+
         query = request.POST['sort']
         currentCategory = 'products'
         products = Product.objects.all()
