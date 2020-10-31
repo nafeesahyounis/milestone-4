@@ -22,7 +22,7 @@ def checkouttest(request):
     #if the cart is empty, redirect to products
     if not cart:
         messages.error(request, "Your cart is currently empty.")
-        return redirect(reverse('test'))
+        return redirect(reverse('products'))
     #if the user submits the form, an order is created in the database
 
     if request.method == 'POST':
@@ -49,21 +49,11 @@ def checkouttest(request):
                                                         quantity=value,
                                                         total_cost=total_cost)
                             print('beginning', order_line_item)
-                            #order_line_item.order = order
-                            # order_line_item.save()
-                            #print('next line', order_line_item)
-                            #order_line_item.product = product
-                            #order_line_item.quantity = value
+                           
                             order_line_item.save()
                             print('save')
                             print('test', order_line_item)
-                            #order_line_item = OrderItem(
-                            #    order=order,
-                            #    product=product,
-                            #    quantity=value,
-                            #)
-                            #print('before', order_line_item)
-                            #order_line_item.save()
+                            
                             print('saved', order_line_item)
                         else:
                             print('we are jumping')
