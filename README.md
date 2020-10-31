@@ -403,6 +403,16 @@ total_cost | / | DecimalField
 
 # Technologies Used
 
+* [GitHub](https://github.com/) - Was used to remotely store the code online.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) - This was used for the main markup of the site.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) - This was used was for styling.
+- [jQuery 3.4.0](https://code.jquery.com/jquery/) was used for the main javascript functionality.
+- Bootstrap was used as the framework for the layout.
+- [Heroku](https://www.heroku.com) - The app has been hosted on heroku.
+- [Python 3.6.7](https://www.python.org/) - was the backend language used for this project.
+- Django was used to build the app.
+
+
 # Testing 
 
 Testing information can be found in separate [TESTING.md](TESTING.md) file
@@ -410,6 +420,147 @@ Testing information can be found in separate [TESTING.md](TESTING.md) file
 
 # Deployment
 
+## How to run this project locally
+
+In order to run this project on your idea, you firstly need to have these tools:
+    - An IDE like [Visual Studio Code](https://code.visualstudio.com/)
+
+The following three things need to be installed on your machine:
+    - [PIP](https://pip.pypa.io/en/stable/installing/)
+    - [Python 3](https://www.python.org/downloads/)
+    - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+You must have a free account with the following two services:
+    - [Stripe](https://dashboard.stripe.com/register)
+    - [AWS](https://aws.amazon.com/) and [set up an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+
+
+### Instructions
+- Firstly, you need to save the github repo https://github.com/nafeesahyounis/milestone-4 . You can do this through clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
+    ```
+    git clone https://github.com/nafeesahyounis/milestone-4
+    ```
+
+- The next step is to open your IDE and a terminal session in the unzip folder or cd to the correct location.
+
+- You will need a virtual environment for the Python interpreter, such assumes
+
+    python -m .venv venv
+    ```  
+_NOTE: The `python` part of this command and the ones in other steps below assumes  you are working with a windows operating system. Your Python command may differ, such as `python3` or `py`_
+
+- Then you must activate .venv with the command:
+    ```
+    .venv\Scripts\activate 
+    ```
+_Again this **command may differ depending on your operating system**, please check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html) for further instructions._
+
+
+- You can install the necessary modules with this command: 
+    ```
+    pip -r requirements.txt.
+    ```
+
+And then set up environment variables like so:
+
+
+    ```json
+    "terminal.integrated.env.windows": {
+        "HOSTNAME": "<enter hostname here>",
+        "DEV": "1",
+        "SECRET_KEY": "<enter key here>",
+        "STRIPE_PUBLISHABLE": "<enter key here>",
+        "STRIPE_SECRET": "<enter key here>",
+        "EMAILJS_USER_ID": "<enter key here>",
+        "STRIPE_SUCCESS_URL": "<enter url here>",
+        "STRIPE_CANCEL_URL": "<enter url here>",
+        "AWS_ACCESS_KEY_ID": "<enter key here>",
+        "AWS_SECRET_ACCESS_KEY": "<enter key here>",
+        "AWS_STORAGE_BUCKET_NAME": "<enter bucket name here>",
+    }
+    ```
+
+    - If using an IDE that includes a `bashrc` file, open this file and enter all the environment variables listed above using the following format: 
+    ```
+    HOSTNAME="<enter key here>"
+    ```
+    - `HOSTNAME` should be the local address for the site when running within your own IDE.
+    - `DEV` environment variable is set only within the development environment, it does not exist in the deployed version, making it possible to have different settings for the two environments. For example setting DEBUG to True only when working in development and not on the deployed site.
+
+
+- Then, you need to migrate the models in the admin panel to make your database template like so:
+
+    python manage.py migrate
+    ```
+
+- The next step is to make a superuser in order to be able to use the admin panel
+
+    python manage.py createsuperuser
+    ```
+
+- You can now run the program locally with the following command: 
+    ```
+    python manage.py runserver
+    ```
+
+- Once the program is running, go to the local link provided and add `/admin` to the end of the ur. Here log in with your superuser account and create instances of ShippingDestination and Product within the new database.
+
+- Once instances of these items exist in your database your local site will run as expected.
+
+
+## Heroku Deployment
+
+These are the steps to deploy lifestyle redesigned to heroku.
+
+- First, make a `requirements.txt` file with the command in the terminal `pip freeze > requirements.txt`.
+
+- Then, make a `Procfile` with command in the terminal `echo web: python app.py > Procfile`.
+
+- Thirdly, use `git add` and `git commit` so that the new requirements will go into the Procfile and then git push as otherwise it won't work in Heroku.
+
+- Make a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. 
+
+- Go to the heroku dashboard of your new application and click 'Deploy' > Deployment Method and choose github.
+
+-  Link your github repo with your heroku app.
+
+- Then go to the heroku dashboard and open your config vars and set up the following variables:
+
+
+| Key | Value |
+--- | ---
+AWS_ACCESS_KEY_ID | `<your secret key>`
+AWS_SECRET_ACCESS_KEY | `<your secret key>`
+AWS_STORAGE_BUCKET_NAME | `<your AWS S3 bucket name>`
+DATABASE_URL | `<your postgres database url>`
+EMAIL_HOST_PASS | `<your heroku app hostname>`
+SECRET_KEY | `<your secret key>`
+STRIPE_PUBLIC_KEY | `<your secret key>`
+STRIPE_SECRET-KEY | `<your secret key>`
+
+- Go to the command line of your local IDE, and do the following:
+    - Enter the heroku postGres shell 
+    - Migrate the database models 
+    - Create your superuser account in your new database
+    
+     Instructions on how to do these steps can be found in the [heroku devcenter documentation](https://devcenter.heroku.com/articles/heroku-postgresql).
+
+- Then go to your dashboard in heroku and click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+- After the build is completed, you can click on View App.
+
+- You can now add /admin to the end of the url and login as a superuser.
+
+- the site should now run as expected.
+
+
+
 # Credits
+
+- Checkout and cart code was taken largely from codeinstitute boutique ado project due to time constraints.
+
+- Images were taken from Pexels.
+
+
 
 
