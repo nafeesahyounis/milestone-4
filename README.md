@@ -198,3 +198,34 @@ I would have liked to better refine and design the footer, but the project had a
 
 There are also issues with the footer that are discussed in the testing md file.
 
+### Home Page
+
+* Carousel
+
+There is a carousel that shows the main services offered on the site with images. This is in order to create a more appealing user experience and immediately draw the users eye.
+
+* Call to Action/About
+
+There is a brief summary of the purpose of the ecommerce site under the carousel. This is in order to clearly define the purpose of the site to the user without requiring further searching.
+
+* Shopping button
+
+There is a button that takes the user immediately to the products page as this provides more options for navigation and a better user experience.
+
+### Home Page
+
+* Category buttons
+
+The five main categories are listed at the top of the page and user can select which category they want to view, and from there get the results filtered accordingly. 
+
+* Sort filters
+
+There are three filters on each page, price from high to low, price from low to high and highest rated. This allows for the user to sort the services and provides a better ux.
+
+* Breadcrumb menu
+
+There is a breadcrumb menu at the top of the page that the user can click to either be redirected back to the home page, to the category page, or to reload the existing category they are on. 
+
+* Products list
+
+Products are displayed with name and description as well as price and rating. Note: unfortunately due to time constraints and some last minute issues, images were not successfully loaded. See testing.md for further details.
