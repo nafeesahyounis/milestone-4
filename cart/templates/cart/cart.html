@@ -13,10 +13,18 @@
     <td>{{ items.product.price }}</td>
 
   {% endfor %}
-  <a href="{% url 'checkouttest' %}"> Checkout</a>
-
+  
 </tbody>
 </table>
+<div class="container">
+  <div class="row">
+  <div class="col-12">
+  <a href="{% url 'checkouttest' %}" type="button" class="btn btn-info"> Checkout</a>
+    <a href="{% url 'products' %}" type="button" class="btn btn-success"> Return to Products </a>
+
+  </div>
+  </div>
+  </div>
 </div>
 </div>
 
