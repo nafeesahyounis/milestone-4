@@ -190,3 +190,11 @@ When the user is logged in, the following items are visible:
 
 - Shopping cart in left corner
 
+* Footer
+
+Due to time constraints on the project, the footer was kept very simple and displays basic contact information and the name of the developer as well as Copywright info.
+
+I would have liked to better refine and design the footer, but the project had a very strict timeline and so priority was given to the Python backend.
+
+There are also issues with the footer that are discussed in the testing md file.
+
