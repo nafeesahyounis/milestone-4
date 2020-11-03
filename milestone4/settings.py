@@ -22,7 +22,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 's^i-z7#h62m&8#4r92m2hx@i(gx-_^yd$m7=1p0yvyfvn%54wf'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
